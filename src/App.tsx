@@ -174,16 +174,16 @@ export default function App() {
           
           <div className="w-full md:w-1/2">
             <div className="relative w-full aspect-[4/3] md:aspect-auto md:h-[500px] overflow-hidden rounded-tr-[5rem] rounded-bl-[5rem] rounded-tl-2xl rounded-br-2xl">
-              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" alt="Profissional Galerie Clinic" className="object-cover w-full h-full object-top" />
+              <img src="/assets/PRF00474.jpg" alt="Profissional Galerie Clinic" className="object-cover w-full h-full object-top" />
             </div>
           </div>
         </section>
 
         {/* Marquee Ticker 1 */}
-        <div className="bg-[#82533a] text-white py-4 overflow-hidden flex whitespace-nowrap">
-          <div className="animate-marquee flex gap-4 items-center">
+        <div className="bg-[#82533a] text-white py-6 overflow-hidden flex whitespace-nowrap">
+          <div className="animate-marquee flex gap-8 items-center">
             {[...Array(10)].map((_, i) => (
-              <span key={i} className="text-lg font-normal tracking-wide">Galerie Clinic Estética - </span>
+              <span key={i} className="text-3xl font-normal tracking-wide uppercase">Resultados Naturais • Beleza com Essência • Medicina Estética de Precisão • Galerie Clinic Porto • </span>
             ))}
           </div>
         </div>
@@ -192,7 +192,7 @@ export default function App() {
         <section className="py-24 max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16 md:gap-24">
           <div className="w-full md:w-5/12 relative">
             <div className="rounded-tr-[4rem] rounded-bl-[4rem] rounded-tl-2xl rounded-br-2xl overflow-hidden aspect-square">
-              <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800" alt="Resultados Naturais" className="object-cover w-full h-full" />
+              <img src="/assets/aging_essence.png" alt="Resultados Naturais" className="object-cover w-full h-full" />
             </div>
             
             {/* Floating Badge */}
@@ -248,13 +248,13 @@ export default function App() {
                 </div>
               </div>
               <div className="h-48 md:h-auto md:w-1/2">
-                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg" alt="Botox" className="w-full h-full object-cover" />
+                <img src="/assets/specialty_botox.png" alt="Botox" className="w-full h-full object-cover" />
               </div>
             </div>
 
             {/* Preenchimento Labial */}
             <div className="relative bg-slate-900 rounded-3xl overflow-hidden min-h-[300px]">
-              <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&q=80&w=600" alt="Preenchimento Labial" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+              <img src="/assets/specialty_labial.png" alt="Preenchimento Labial" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Preenchimento Labial</h3>
@@ -266,7 +266,7 @@ export default function App() {
 
             {/* Bioestimuladores */}
             <div className="relative bg-slate-900 rounded-3xl overflow-hidden min-h-[300px]">
-              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c543a9e1-f226-4ced-80b0-feb8445a75b9_1600w.jpg" alt="Bioestimuladores" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+              <img src="/assets/specialty_bioestimuladores.png" alt="Bioestimuladores" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Bioestimuladores<br />de Colagénio</h3>
@@ -278,7 +278,7 @@ export default function App() {
 
             {/* Laser */}
             <div className="relative bg-slate-900 rounded-3xl overflow-hidden min-h-[300px]">
-              <img src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&q=80&w=600" alt="Laser" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+              <img src="/assets/specialty_laser.png" alt="Laser" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Laser para<br />Qualidade de Pele</h3>
@@ -290,7 +290,7 @@ export default function App() {
 
             {/* PRP */}
             <div className="relative bg-slate-900 rounded-3xl overflow-hidden min-h-[300px]">
-              <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=600" alt="PRP Capilar" className="absolute inset-0 w-full h-full object-cover opacity-90 object-top" />
+              <img src="/assets/specialty_prp.png" alt="PRP Capilar" className="absolute inset-0 w-full h-full object-cover opacity-90 object-top" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">PRP<br />Capilar</h3>
@@ -314,7 +314,7 @@ export default function App() {
                 </div>
               </div>
               <div className="h-56 md:h-auto md:w-1/2">
-                <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=800" alt="Nutrição Dérmica" className="w-full h-full object-cover" />
+                <img src="/assets/specialty_vitaminas.png" alt="Nutrição Dérmica" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -322,10 +322,10 @@ export default function App() {
         </section>
 
         {/* Marquee Ticker 2 */}
-        <div className="bg-[#82533a] text-white py-4 overflow-hidden flex whitespace-nowrap">
-          <div className="animate-marquee flex gap-4 items-center">
+        <div className="bg-[#82533a] text-white py-6 overflow-hidden flex whitespace-nowrap">
+          <div className="animate-marquee flex gap-8 items-center">
             {[...Array(10)].map((_, i) => (
-              <span key={i} className="text-lg font-normal tracking-wide">Galerie Clinic Estética - </span>
+              <span key={i} className="text-3xl font-normal tracking-wide uppercase">Resultados Naturais • Beleza com Essência • Medicina Estética de Precisão • Galerie Clinic Porto • </span>
             ))}
           </div>
         </div>
