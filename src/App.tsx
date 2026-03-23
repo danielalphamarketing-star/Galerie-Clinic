@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Menu, MessageSquare, ScanFace, Star, BadgeCheck, ChevronDown, Instagram, Facebook, Volume2, VolumeX } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion, useInView } from 'motion/react';
 
 const WA_LINK = 'https://wa.me/351916660005?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Galerie%20Clinic.';
 
@@ -52,33 +52,57 @@ const VideoCarousel = () => {
       <div className="relative flex">
         <motion.div
           className="flex gap-4 px-4"
-          animate={{ x: [0, -3168] }} // approx (260px width + 16px gap) * 12
+          animate={{ x: [0, -3168] }}
           transition={{
-            duration: 60,
+            duration: 80, // Slower for better performance and readability
             repeat: Infinity,
             ease: "linear",
           }}
         >
           {allVideos.map((src, i) => (
             <div key={i} className="relative min-w-[260px] h-[460px] rounded-2xl overflow-hidden bg-[#3b2c24]/10 shadow-sm transition-transform hover:scale-[1.02] duration-300">
-              <video
+              <LazyVideo
                 src={src}
-                className="w-full h-full object-cover cursor-pointer"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                onClick={(e) => toggleMute(i, e.currentTarget)}
+                isMuted={mutedStates[i]}
+                onMuteToggle={(video) => toggleMute(i, video)}
               />
-              <div className="absolute bottom-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full text-white pointer-events-none">
-                {mutedStates[i] ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
-              </div>
             </div>
           ))}
         </motion.div>
       </div>
     </section>
+  );
+};
+
+const LazyVideo = ({ src, isMuted, onMuteToggle }: { src: string, isMuted: boolean, onMuteToggle: (v: HTMLVideoElement) => void }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const isInView = useInView(videoRef, { margin: "200px" });
+
+  useEffect(() => {
+    if (!videoRef.current) return;
+    if (isInView) {
+      videoRef.current.play().catch(() => {});
+    } else {
+      videoRef.current.pause();
+    }
+  }, [isInView]);
+
+  return (
+    <div className="w-full h-full relative">
+      <video
+        ref={videoRef}
+        src={isInView ? src : undefined}
+        className="w-full h-full object-cover cursor-pointer"
+        muted={isMuted}
+        loop
+        playsInline
+        preload="none"
+        onClick={(e) => onMuteToggle(e.currentTarget)}
+      />
+      <div className="absolute bottom-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full text-white pointer-events-none">
+        {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+      </div>
+    </div>
   );
 };
 
@@ -524,10 +548,10 @@ export default function App() {
               Medicina estética de confiança no Porto, focada em resultados naturais e na sua individualidade.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-10 h-10 rounded-full bg-[#82533a] text-white flex items-center justify-center hover:bg-[#6e4631] transition-colors">
+              <a href="https://www.instagram.com/galerie.clinic/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#82533a] text-white flex items-center justify-center hover:bg-[#6e4631] transition-colors">
                 <Instagram className="w-5 h-5" strokeWidth={1.5} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-[#82533a] text-white flex items-center justify-center hover:bg-[#6e4631] transition-colors">
+              <a href="https://www.facebook.com/galerie.clinic.porto" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#82533a] text-white flex items-center justify-center hover:bg-[#6e4631] transition-colors">
                 <Facebook className="w-5 h-5" strokeWidth={1.5} />
               </a>
             </div>
@@ -560,7 +584,7 @@ export default function App() {
             © 2026 Galerie Clinic. Todos os direitos reservados.
           </p>
           <p className="text-base text-[#3b2c24]">
-            Site Desenvolvido por <a href="#" className="underline hover:text-[#eb6625]">Alpha Marketing Digital</a>
+            Site Desenvolvido por <a href="https://alphamarketing.pt/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#eb6625]">Alpha Marketing Digital</a>
           </p>
         </div>
       </footer>
