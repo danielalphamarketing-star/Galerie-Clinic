@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Menu, MessageSquare, ScanFace, Star, BadgeCheck, ChevronDown, Instagram, Facebook, Volume2, VolumeX } from 'lucide-react';
 import { motion, useInView } from 'motion/react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const WA_LINK = 'https://wa.me/351916660005?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Galerie%20Clinic.';
 
@@ -106,7 +107,7 @@ const LazyVideo = ({ src, isMuted, onMuteToggle }: { src: string, isMuted: boole
   );
 };
 
-export default function App() {
+const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -180,13 +181,15 @@ export default function App() {
         </section>
 
         {/* Marquee Ticker 1 */}
-        <div className="bg-[#82533a] text-white py-6 overflow-hidden flex whitespace-nowrap">
-          <div className="animate-marquee flex gap-8 items-center">
-            {[...Array(10)].map((_, i) => (
-              <span key={i} className="text-3xl font-normal tracking-wide uppercase">Resultados Naturais • Beleza com Essência • Medicina Estética de Precisão • Galerie Clinic Porto • </span>
-            ))}
+        {showMarquee && (
+          <div className="bg-[#82533a] text-white py-6 overflow-hidden flex whitespace-nowrap">
+            <div className="animate-marquee flex gap-8 items-center">
+              {[...Array(10)].map((_, i) => (
+                <span key={i} className="text-3xl font-normal tracking-wide uppercase">Resultados Naturais • Beleza com Essência • Medicina Estética de Precisão • Galerie Clinic Porto • </span>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Section: Sente que os sinais... */}
         <section className="py-24 max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16 md:gap-24">
@@ -322,13 +325,15 @@ export default function App() {
         </section>
 
         {/* Marquee Ticker 2 */}
-        <div className="bg-[#82533a] text-white py-6 overflow-hidden flex whitespace-nowrap">
-          <div className="animate-marquee flex gap-8 items-center">
-            {[...Array(10)].map((_, i) => (
-              <span key={i} className="text-3xl font-normal tracking-wide uppercase">Resultados Naturais • Beleza com Essência • Medicina Estética de Precisão • Galerie Clinic Porto • </span>
-            ))}
+        {showMarquee && (
+          <div className="bg-[#82533a] text-white py-6 overflow-hidden flex whitespace-nowrap">
+            <div className="animate-marquee flex gap-8 items-center">
+              {[...Array(10)].map((_, i) => (
+                <span key={i} className="text-3xl font-normal tracking-wide uppercase">Resultados Naturais • Beleza com Essência • Medicina Estética de Precisão • Galerie Clinic Porto • </span>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Section: Como funciona a sua jornada */}
         <section id="como-funcionamos" className="py-24 max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
@@ -604,5 +609,16 @@ export default function App() {
         </svg>
       </a>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/page2" element={<LandingPage showMarquee={false} />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
