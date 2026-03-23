@@ -1,0 +1,478 @@
+import React, { useState } from 'react';
+import { Menu, MessageSquare, ScanFace, Star, BadgeCheck, ChevronDown, Instagram, Facebook } from 'lucide-react';
+
+export default function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  return (
+    <div className="bg-[#fcfaf8] text-[#3b2c24] antialiased overflow-x-hidden font-sans">
+      {/* Header Navigation */}
+      <header className="w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+        <a href="#" className="flex items-center">
+          <span className="text-xl font-medium tracking-tight uppercase">Galerie Clinic</span>
+        </a>
+        
+        <nav className="hidden md:flex items-center gap-8">
+          <a href="#tratamentos" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Tratamentos</a>
+          <a href="#como-funcionamos" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Como Funcionamos</a>
+          <a href="#resultados" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Resultados</a>
+          <a href="#contacte-nos" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Contacte-nos</a>
+        </nav>
+
+        <a href="#" className="hidden md:inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#eb6625] text-white text-base font-medium hover:bg-[#d5591e] transition-colors">
+          Agendar Consulta
+        </a>
+
+        <button 
+          className="md:hidden text-[#3b2c24]"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <Menu className="w-6 h-6" strokeWidth={1.5} />
+        </button>
+      </header>
+
+      {/* Mobile Menu (Added for functionality) */}
+      {isMenuOpen && (
+        <div className="md:hidden px-6 pb-6 bg-[#fcfaf8]">
+          <nav className="flex flex-col gap-4">
+            <a href="#tratamentos" onClick={() => setIsMenuOpen(false)} className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Tratamentos</a>
+            <a href="#como-funcionamos" onClick={() => setIsMenuOpen(false)} className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Como Funcionamos</a>
+            <a href="#resultados" onClick={() => setIsMenuOpen(false)} className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Resultados</a>
+            <a href="#contacte-nos" onClick={() => setIsMenuOpen(false)} className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Contacte-nos</a>
+            <a href="#" className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#eb6625] text-white text-base font-medium hover:bg-[#d5591e] transition-colors w-full">
+              Agendar Consulta
+            </a>
+          </nav>
+        </div>
+      )}
+
+      <main>
+        {/* Hero Section */}
+        <section className="max-w-7xl mx-auto px-6 pt-12 pb-24 flex flex-col md:flex-row items-center gap-12 md:gap-16">
+          <div className="w-full md:w-1/2">
+            <h1 className="text-5xl md:text-[3.5rem] font-medium tracking-tight text-[#3b2c24] leading-[1.1] mb-6">
+              Revele a Sua Beleza Natural com <span className="font-serif italic text-[#eb6625]">quem entende</span> de excelência.
+            </h1>
+            <p className="text-lg text-[#3b2c24] mb-10 leading-relaxed max-w-lg">
+              Na Galerie Clinic, cada detalhe é pensado para revelar a sua melhor versão com tratamentos modernos, atendimento humanizado e resultados que encantam.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#" className="inline-flex items-center justify-center px-8 py-3.5 text-lg text-white bg-[#82533a] rounded-full hover:bg-[#6e4631] transition-colors">
+                Agendar Avaliação
+              </a>
+              <a href="#tratamentos" className="inline-flex items-center justify-center px-8 py-3.5 text-lg text-[#3b2c24] bg-[#b9b2a7] rounded-full hover:bg-[#a59e94] transition-colors">
+                Ver tratamentos
+              </a>
+            </div>
+          </div>
+          
+          <div className="w-full md:w-1/2">
+            <div className="relative w-full aspect-[4/3] md:aspect-auto md:h-[500px] overflow-hidden rounded-tr-[5rem] rounded-bl-[5rem] rounded-tl-2xl rounded-br-2xl">
+              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg" alt="Profissional Galerie Clinic" className="object-cover w-full h-full object-top" />
+            </div>
+          </div>
+        </section>
+
+        {/* Marquee Ticker 1 */}
+        <div className="bg-[#82533a] text-white py-4 overflow-hidden flex whitespace-nowrap">
+          <div className="animate-marquee flex gap-4 items-center">
+            {[...Array(10)].map((_, i) => (
+              <span key={i} className="text-lg font-normal tracking-wide">Galerie Clinic Estética - </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Section: Sente que os sinais... */}
+        <section className="py-24 max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16 md:gap-24">
+          <div className="w-full md:w-5/12 relative">
+            <div className="rounded-tr-[4rem] rounded-bl-[4rem] rounded-tl-2xl rounded-br-2xl overflow-hidden aspect-square">
+              <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800" alt="Resultados Naturais" className="object-cover w-full h-full" />
+            </div>
+            
+            {/* Floating Badge */}
+            <div className="absolute -top-6 -right-6 md:-top-10 md:-right-10 z-20 w-32 h-32 bg-[#82533a] rounded-full flex items-center justify-center p-2 shadow-lg">
+              <svg viewBox="0 0 100 100" className="w-full h-full animate-[spin_20s_linear_infinite]">
+                <path d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" id="circle-text" fill="none" />
+                <text className="text-[11px] font-medium tracking-widest text-white uppercase">
+                  <textPath href="#circle-text" startOffset="0%">Galerie Clinic Estética • </textPath>
+                </text>
+              </svg>
+              <span className="absolute text-3xl font-serif text-white">G</span>
+            </div>
+          </div>
+
+          <div className="w-full md:w-7/12">
+            <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] mb-6 leading-[1.1]">
+              Sente que os sinais do tempo estão a <span className="font-serif italic text-[#eb6625]">apagar</span> a sua essência?
+            </h2>
+            <div className="space-y-4 text-lg text-[#3b2c24] leading-relaxed">
+              <p>
+                A sua beleza merece ser celebrada, não desfigurada por exageros ou promessas vazias.
+              </p>
+              <p>
+                Na Galerie Clinic, em Porto, a nossa equipa de especialistas, supervisionada pela Dra. Rita Sêco, oferece uma medicina estética focada em resultados naturais e duradouros.
+              </p>
+              <p>
+                Defendemos a individualidade e recusamos qualquer procedimento que prometa o impossível. Acreditamos na verdade, na ciência e em resultados que fazem a sua beleza florescer naturalmente, sem artifícios.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Section: Especialidades (Bento Grid) */}
+        <section id="tratamentos" className="py-24 max-w-6xl mx-auto px-6 flex flex-col items-center">
+          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] text-center mb-16">
+            As nossas especialidades<br />
+            em <span className="font-serif italic text-[#eb6625]">Medicina Estética.</span>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+            
+            {/* Botox (Wide) */}
+            <div className="md:col-span-2 bg-[#c69d7b] rounded-3xl overflow-hidden flex flex-col md:flex-row relative min-h-[300px]">
+              <div className="p-8 md:p-12 md:w-1/2 flex flex-col justify-center z-10">
+                <h3 className="text-2xl font-medium tracking-tight text-white mb-4">Botox (Toxina<br />Botulínica)</h3>
+                <p className="text-base text-white/90 mb-6 leading-relaxed">
+                  Suavize rugas de expressão e previna o envelhecimento. Aplicação precisa para um aspeto mais jovem e relaxado, mantendo a naturalidade e a expressividade da sua face.
+                </p>
+                <div>
+                  <a href="#" className="inline-flex items-center justify-center px-6 py-2.5 text-base text-white bg-[#eb6625] rounded-full hover:bg-[#d5591e] transition-colors">
+                    Agendar Avaliação
+                  </a>
+                </div>
+              </div>
+              <div className="h-48 md:h-auto md:w-1/2">
+                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg" alt="Botox" className="w-full h-full object-cover" />
+              </div>
+            </div>
+
+            {/* Preenchimento Labial */}
+            <div className="relative bg-slate-900 rounded-3xl overflow-hidden min-h-[300px]">
+              <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?auto=format&fit=crop&q=80&w=600" alt="Preenchimento Labial" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 p-8">
+                <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Preenchimento Labial</h3>
+                <p className="text-base text-white/90 leading-relaxed">
+                  Realce os seus lábios com volume e contorno harmoniosos, sem exageros.
+                </p>
+              </div>
+            </div>
+
+            {/* Bioestimuladores */}
+            <div className="relative bg-slate-900 rounded-3xl overflow-hidden min-h-[300px]">
+              <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c543a9e1-f226-4ced-80b0-feb8445a75b9_1600w.jpg" alt="Bioestimuladores" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 p-8">
+                <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Bioestimuladores<br />de Colagénio</h3>
+                <p className="text-base text-white/90 leading-relaxed">
+                  Melhore a flacidez e a qualidade da pele estimulando a sua produção natural.
+                </p>
+              </div>
+            </div>
+
+            {/* Laser */}
+            <div className="relative bg-slate-900 rounded-3xl overflow-hidden min-h-[300px]">
+              <img src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&q=80&w=600" alt="Laser" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 p-8">
+                <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Laser para<br />Qualidade de Pele</h3>
+                <p className="text-base text-white/90 leading-relaxed">
+                  MOXI, HALO, Clear V e BBL para uma pele renovada, uniforme e radiante.
+                </p>
+              </div>
+            </div>
+
+            {/* PRP */}
+            <div className="relative bg-slate-900 rounded-3xl overflow-hidden min-h-[300px]">
+              <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=600" alt="PRP Capilar" className="absolute inset-0 w-full h-full object-cover opacity-90 object-top" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 p-8">
+                <h3 className="text-2xl font-medium tracking-tight text-white mb-2">PRP<br />Capilar</h3>
+                <p className="text-base text-white/90 leading-relaxed">
+                  Combata a queda e melhore a densidade capilar com o seu próprio plasma.
+                </p>
+              </div>
+            </div>
+
+            {/* Vitaminas (Wide) */}
+            <div className="md:col-span-3 bg-[#82533a] rounded-3xl overflow-hidden flex flex-col md:flex-row relative min-h-[300px]">
+              <div className="p-8 md:p-12 md:w-1/2 flex flex-col justify-center z-10">
+                <h3 className="text-2xl font-medium tracking-tight text-white mb-4">Vitaminas e Nutrição Dérmica</h3>
+                <p className="text-base text-white/90 mb-6 leading-relaxed">
+                  Infusão de vitaminas e nutrientes essenciais diretamente na pele para hidratação profunda, luminosidade e proteção antioxidante.
+                </p>
+                <div>
+                  <a href="#" className="inline-flex items-center justify-center px-6 py-2.5 text-base text-white bg-[#eb6625] rounded-full hover:bg-[#d5591e] transition-colors">
+                    Agendar Avaliação
+                  </a>
+                </div>
+              </div>
+              <div className="h-56 md:h-auto md:w-1/2">
+                <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=800" alt="Nutrição Dérmica" className="w-full h-full object-cover" />
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* Marquee Ticker 2 */}
+        <div className="bg-[#82533a] text-white py-4 overflow-hidden flex whitespace-nowrap">
+          <div className="animate-marquee flex gap-4 items-center">
+            {[...Array(10)].map((_, i) => (
+              <span key={i} className="text-lg font-normal tracking-wide">Galerie Clinic Estética - </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Section: Como funciona a sua jornada */}
+        <section id="como-funcionamos" className="py-24 max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
+          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] mb-4">
+            Como funciona a <span className="font-serif italic text-[#eb6625]">sua jornada</span> connosco?
+          </h2>
+          <p className="text-lg text-[#3b2c24] mb-20 max-w-2xl">
+            Um processo simples, transparente e focado em si, desde o primeiro contacto até ao acompanhamento final.
+          </p>
+
+          <div className="relative w-full flex flex-col md:flex-row justify-between items-start mb-16 gap-12 md:gap-0">
+            {/* Connecting Line */}
+            <div className="hidden md:block absolute top-16 left-[15%] right-[15%] h-[1px] bg-[#3b2c24]/20 -z-10"></div>
+
+            {/* Step 1 */}
+            <div className="w-full md:w-1/3 flex flex-col items-center relative bg-[#fcfaf8]">
+              <div className="w-32 h-32 rounded-full bg-gradient-to-b from-[#fbb693] to-[#fac8b2] flex items-center justify-center mb-6 shadow-sm">
+                <div className="w-16 h-16 rounded-full bg-[#eb6625] flex items-center justify-center text-white">
+                  <MessageSquare className="w-7 h-7" strokeWidth={1.5} />
+                </div>
+              </div>
+              <h3 className="text-2xl font-medium tracking-tight text-[#eb6625] mb-4">Triagem Inicial</h3>
+              <p className="text-base text-[#3b2c24] leading-relaxed max-w-[260px]">
+                Entre em contacto via WhatsApp. A nossa equipa fará uma breve triagem para entender as suas necessidades e apresentar os valores.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="w-full md:w-1/3 flex flex-col items-center relative bg-[#fcfaf8]">
+              <div className="w-32 h-32 rounded-full bg-gradient-to-b from-[#fbb693] to-[#fac8b2] flex items-center justify-center mb-6 shadow-sm">
+                <div className="w-16 h-16 rounded-full bg-[#eb6625] flex items-center justify-center text-white">
+                  <ScanFace className="w-7 h-7" strokeWidth={1.5} />
+                </div>
+              </div>
+              <h3 className="text-2xl font-medium tracking-tight text-[#eb6625] mb-4">Consulta Médica</h3>
+              <p className="text-base text-[#3b2c24] leading-relaxed max-w-[260px]">
+                Agende a sua consulta com a nossa equipa médica especializada para elaborar um plano de tratamento personalizado. O valor é descontado no procedimento.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="w-full md:w-1/3 flex flex-col items-center relative bg-[#fcfaf8]">
+              <div className="w-32 h-32 rounded-full bg-gradient-to-b from-[#fbb693] to-[#fac8b2] flex items-center justify-center mb-6 shadow-sm">
+                <div className="w-16 h-16 rounded-full bg-[#eb6625] flex items-center justify-center text-white">
+                  <Star className="w-7 h-7" strokeWidth={1.5} />
+                </div>
+              </div>
+              <h3 className="text-2xl font-medium tracking-tight text-[#eb6625] mb-4">Tratamento & Cuidado</h3>
+              <p className="text-base text-[#3b2c24] leading-relaxed max-w-[260px]">
+                Realização do procedimento com máximo conforto, segurança e foco em resultados naturais, seguido de acompanhamento próximo.
+              </p>
+            </div>
+          </div>
+
+          <a href="#" className="inline-flex items-center justify-center px-8 py-3.5 text-lg text-white bg-[#82533a] rounded-full hover:bg-[#6e4631] transition-colors">
+            Dar o primeiro passo
+          </a>
+        </section>
+
+        {/* Stats Section */}
+        <section className="bg-[#eb6625] py-16 w-full">
+          <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/20">
+            <div className="text-center px-4">
+              <div className="text-5xl md:text-6xl font-medium tracking-tight text-white mb-2">10+</div>
+              <div className="text-base text-white/90">Anos de experiência da Dra.<br />Rita Sêco</div>
+            </div>
+            <div className="text-center px-4">
+              <div className="text-5xl md:text-6xl font-medium tracking-tight text-white mb-2">3</div>
+              <div className="text-base text-white/90">Anos de clínica no coração<br />do Porto</div>
+            </div>
+            <div className="text-center px-4">
+              <div className="text-5xl md:text-6xl font-medium tracking-tight text-white mb-2">100%</div>
+              <div className="text-base text-white/90">Taxa de fixação de clientes<br />em tratamento</div>
+            </div>
+            <div className="text-center px-4">
+              <div className="text-5xl md:text-6xl font-medium tracking-tight text-white mb-2">+</div>
+              <div className="text-base text-white/90">Centenas de clientes<br />fidelizados</div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section id="resultados" className="py-24 max-w-6xl mx-auto px-6 flex flex-col items-center">
+          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] text-center mb-4">
+            O que as <span className="font-serif italic text-[#82533a]">nossas clientes</span> dizem
+          </h2>
+          <p className="text-lg text-[#3b2c24] text-center mb-16 max-w-md">
+            A nossa maior recompensa é a confiança e a satisfação de quem nos escolhe
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+            {/* Card 1 */}
+            <div className="bg-[#f3e4d5] rounded-xl p-8 flex flex-col shadow-sm">
+              <div className="flex gap-1 text-[#3b2c24] mb-6">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5" strokeWidth={1.5} fill="currentColor" />
+                ))}
+              </div>
+              <p className="text-lg text-[#3b2c24] leading-relaxed mb-8 flex-grow">
+                "Depois de anos à procura de uma clínica em Porto que realmente entendesse o que eu queria, encontrei a Galerie. Fiz Botox com a Dra. Leonor e o resultado é tão natural que ninguém percebeu, só que estou com um aspeto mais descansado e feliz. Confio plenamente!"
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-[#4a72b0] text-white flex items-center justify-center text-xl font-medium">
+                  A
+                </div>
+                <div>
+                  <p className="text-base font-medium text-[#3b2c24] flex items-center gap-1">
+                    Ana Rodrigues <BadgeCheck className="w-4 h-4 text-blue-500" strokeWidth={2} fill="currentColor" stroke="white" />
+                  </p>
+                  <p className="text-sm text-[#3b2c24]/70">Empresária, Porto</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-[#f3e4d5] rounded-xl p-8 flex flex-col shadow-sm">
+              <div className="flex gap-1 text-[#3b2c24] mb-6">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5" strokeWidth={1.5} fill="currentColor" />
+                ))}
+              </div>
+              <p className="text-lg text-[#3b2c24] leading-relaxed mb-8 flex-grow">
+                "A minha maior preocupação era ficar com os lábios exagerados. A equipa da Galerie Clinic fez um trabalho incrível com preenchimento labial, ficou super subtil e natural. Sinto-me muito mais confiante e bonita. Recomendo a 100%!"
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-[#eb6625] text-white flex items-center justify-center text-xl font-medium">
+                  S
+                </div>
+                <div>
+                  <p className="text-base font-medium text-[#3b2c24] flex items-center gap-1">
+                    Sofia Mendes <BadgeCheck className="w-4 h-4 text-blue-500" strokeWidth={2} fill="currentColor" stroke="white" />
+                  </p>
+                  <p className="text-sm text-[#3b2c24]/70">Advogada, Braga</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-[#f3e4d5] rounded-xl p-8 flex flex-col shadow-sm">
+              <div className="flex gap-1 text-[#3b2c24] mb-6">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5" strokeWidth={1.5} fill="currentColor" />
+                ))}
+              </div>
+              <p className="text-lg text-[#3b2c24] leading-relaxed mb-8 flex-grow">
+                "Sofria com a queda de cabelo e o PRP Capilar na Galerie com a Enfermeira Jéssica mudou a minha vida. Os resultados são visíveis, o meu cabelo está mais forte e denso. A honestidade e o cuidado da equipa são impressionantes."
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-[#82533a] text-white flex items-center justify-center text-xl font-medium">
+                  F
+                </div>
+                <div>
+                  <p className="text-base font-medium text-[#3b2c24] flex items-center gap-1">
+                    Filipa Gomes <BadgeCheck className="w-4 h-4 text-blue-500" strokeWidth={2} fill="currentColor" stroke="white" />
+                  </p>
+                  <p className="text-sm text-[#3b2c24]/70">Designer, Guimarães</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section: FAQ */}
+        <section className="py-24 max-w-4xl mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] text-center mb-16">
+            Perguntas <span className="font-serif italic text-[#eb6625]">Frequentes</span>
+          </h2>
+          
+          <div className="space-y-4">
+            <div className="bg-[#714b38] rounded-xl px-8 py-5 flex items-center justify-between cursor-pointer hover:bg-[#634031] transition-colors">
+              <h3 className="text-xl text-white font-medium">Os tratamentos são muito caros na Galerie Clinic?</h3>
+              <ChevronDown className="w-5 h-5 text-white" strokeWidth={1.5} />
+            </div>
+            <div className="bg-[#714b38] rounded-xl px-8 py-5 flex items-center justify-between cursor-pointer hover:bg-[#634031] transition-colors">
+              <h3 className="text-xl text-white font-medium">Tenho receio de injetáveis. Os procedimentos são seguros?</h3>
+              <ChevronDown className="w-5 h-5 text-white" strokeWidth={1.5} />
+            </div>
+            <div className="bg-[#714b38] rounded-xl px-8 py-5 flex items-center justify-between cursor-pointer hover:bg-[#634031] transition-colors">
+              <h3 className="text-xl text-white font-medium">Qual o tempo de duração dos resultados?</h3>
+              <ChevronDown className="w-5 h-5 text-white" strokeWidth={1.5} />
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section id="contacte-nos" className="bg-[#714b38] py-24 px-6 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-white mb-6 leading-tight">
+              Pronta para realçar a sua<br />beleza de forma <span className="font-serif italic">autêntica<br />e segura?</span>
+            </h2>
+            <p className="text-xl text-white/90 mb-10 font-medium">
+              A sua jornada para uma beleza natural e duradoura começa agora. A nossa equipa aguarda para oferecer-lhe uma experiência única.
+            </p>
+            <a href="#" className="inline-flex items-center justify-center px-10 py-4 text-lg text-[#3b2c24] bg-[#fbb693] rounded-full hover:bg-[#fac8b2] transition-colors font-medium">
+              Agendar Avaliação
+            </a>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-[#fcfaf8] pt-20 pb-10">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+          
+          <div className="flex flex-col">
+            <span className="text-2xl font-medium tracking-tight uppercase text-[#3b2c24] mb-4">Galerie Clinic</span>
+            <p className="text-lg text-[#3b2c24] mb-8 max-w-sm">
+              Medicina estética de confiança no Porto, focada em resultados naturais e na sua individualidade.
+            </p>
+            <div className="flex gap-3">
+              <a href="#" className="w-10 h-10 rounded-full bg-[#82533a] text-white flex items-center justify-center hover:bg-[#6e4631] transition-colors">
+                <Instagram className="w-5 h-5" strokeWidth={1.5} />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-[#82533a] text-white flex items-center justify-center hover:bg-[#6e4631] transition-colors">
+                <Facebook className="w-5 h-5" strokeWidth={1.5} />
+              </a>
+            </div>
+          </div>
+
+          <div className="flex flex-col">
+            <h4 className="text-xl font-medium text-[#3b2c24] mb-6">Contactos</h4>
+            <p className="text-lg text-[#3b2c24] mb-4">
+              Rua do Ouro, 736<br />
+              Porto, Portugal 4150-549
+            </p>
+            <p className="text-lg text-[#3b2c24] mb-4">+351 916 660 005</p>
+            <p className="text-lg text-[#3b2c24]">geral@galerieclinic.com</p>
+          </div>
+
+          <div className="flex flex-col">
+            <h4 className="text-xl font-medium text-[#3b2c24] mb-6">Links Úteis</h4>
+            <div className="flex flex-col gap-3">
+              <a href="#tratamentos" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Tratamentos</a>
+              <a href="#como-funcionamos" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Como Funcionamos</a>
+              <a href="#resultados" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Resultados</a>
+              <a href="#" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Política de Privacidade</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 border-t border-[#3b2c24]/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-base text-[#3b2c24]">
+            © 2026 Galerie Clinic. Todos os direitos reservados.
+          </p>
+          <p className="text-base text-[#3b2c24]">
+            Site Desenvolvido por <a href="#" className="underline hover:text-[#eb6625]">Alpha Marketing Digital</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+}
