@@ -6,3 +6,12 @@ coverage/
 *.log
 .env*
 !.env.example
+.agent/
+.antigravity/
+_opensquad/
+squads/
+skills/
+dashboard/
+lovable-mcp-server-main/
+opensquad-master/
+wordpress-mcp-trunk/

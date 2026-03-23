@@ -1,8 +1,90 @@
-import React, { useState } from 'react';
-import { Menu, MessageSquare, ScanFace, Star, BadgeCheck, ChevronDown, Instagram, Facebook } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { Menu, MessageSquare, ScanFace, Star, BadgeCheck, ChevronDown, Instagram, Facebook, Volume2, VolumeX } from 'lucide-react';
+import { motion } from 'motion/react';
+
+const WA_LINK = 'https://wa.me/351916660005?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Galerie%20Clinic.';
+
+const VIDEO_SOURCES = [
+  '/videos/LIMPEZA_v2_1.mov',
+  '/videos/LIMPEZA_v2_3.mov',
+  '/videos/MASSAGEM_12.mov',
+  '/videos/MASSAGEM_8.mov',
+  '/videos/SKIN_GIRLS_2.mp4',
+  '/videos/SKIN_GIRLS_3.mp4',
+  '/videos/LIMPEZAS_11.mov',
+  '/videos/LIMPEZAS_4.mov',
+  '/videos/LIMPEZAS_8.mov',
+  '/videos/LIMPEZAS_9.mov',
+  '/videos/MASSAGEM_2.mov',
+  '/videos/MASSAGEM_5.mov',
+];
+
+const FAQ_ITEMS = [
+  {
+    question: 'Os tratamentos são muito caros na Galerie Clinic?',
+    answer: 'Os nossos valores refletem a qualidade, segurança e ética dos procedimentos que realizamos. Fazemos sempre triagem de valores por telefone antes da consulta, para que venha totalmente informada e sem surpresas.',
+  },
+  {
+    question: 'Tenho receio de injetáveis. Os procedimentos são seguros?',
+    answer: 'Absolutamente. A nossa equipa é formada e supervisionada pela Dra. Rita Sêco, e nunca realizamos qualquer procedimento sem antes explicar cada detalhe. Começamos sempre de forma gradual e segura, respeitando o seu ritmo.',
+  },
+  {
+    question: 'Qual o tempo de duração dos resultados?',
+    answer: 'Depende do tratamento. O Botox tem duração de 4 a 6 meses, os preenchimentos de 12 a 18 meses e os bioestimuladores de colagénio têm efeito progressivo e duradouro. Em consulta, traçamos um plano personalizado para si.',
+  },
+];
+
+const VideoCarousel = () => {
+  const [mutedStates, setMutedStates] = useState<boolean[]>(new Array(VIDEO_SOURCES.length * 2).fill(true));
+
+  const toggleMute = (index: number, videoElement: HTMLVideoElement) => {
+    const newMutedStates = [...mutedStates];
+    const newState = !videoElement.muted;
+    videoElement.muted = newState;
+    newMutedStates[index] = newState;
+    setMutedStates(newMutedStates);
+  };
+
+  const allVideos = [...VIDEO_SOURCES, ...VIDEO_SOURCES];
+
+  return (
+    <section className="py-12 bg-[#fcfaf8] overflow-hidden border-t border-b border-[#3b2c24]/5">
+      <div className="relative flex">
+        <motion.div
+          className="flex gap-4 px-4"
+          animate={{ x: [0, -3168] }} // approx (260px width + 16px gap) * 12
+          transition={{
+            duration: 60,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        >
+          {allVideos.map((src, i) => (
+            <div key={i} className="relative min-w-[260px] h-[460px] rounded-2xl overflow-hidden bg-[#3b2c24]/10 shadow-sm transition-transform hover:scale-[1.02] duration-300">
+              <video
+                src={src}
+                className="w-full h-full object-cover cursor-pointer"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                onClick={(e) => toggleMute(i, e.currentTarget)}
+              />
+              <div className="absolute bottom-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full text-white pointer-events-none">
+                {mutedStates[i] ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+              </div>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
     <div className="bg-[#fcfaf8] text-[#3b2c24] antialiased overflow-x-hidden font-sans">
@@ -19,7 +101,7 @@ export default function App() {
           <a href="#contacte-nos" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Contacte-nos</a>
         </nav>
 
-        <a href="#" className="hidden md:inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#eb6625] text-white text-base font-medium hover:bg-[#d5591e] transition-colors">
+        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="hidden md:inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#eb6625] text-white text-base font-medium hover:bg-[#d5591e] transition-colors">
           Agendar Consulta
         </a>
 
@@ -39,7 +121,7 @@ export default function App() {
             <a href="#como-funcionamos" onClick={() => setIsMenuOpen(false)} className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Como Funcionamos</a>
             <a href="#resultados" onClick={() => setIsMenuOpen(false)} className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Resultados</a>
             <a href="#contacte-nos" onClick={() => setIsMenuOpen(false)} className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Contacte-nos</a>
-            <a href="#" className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#eb6625] text-white text-base font-medium hover:bg-[#d5591e] transition-colors w-full">
+            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#eb6625] text-white text-base font-medium hover:bg-[#d5591e] transition-colors w-full">
               Agendar Consulta
             </a>
           </nav>
@@ -57,7 +139,7 @@ export default function App() {
               Na Galerie Clinic, cada detalhe é pensado para revelar a sua melhor versão com tratamentos modernos, atendimento humanizado e resultados que encantam.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#" className="inline-flex items-center justify-center px-8 py-3.5 text-lg text-white bg-[#82533a] rounded-full hover:bg-[#6e4631] transition-colors">
+              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3.5 text-lg text-white bg-[#82533a] rounded-full hover:bg-[#6e4631] transition-colors">
                 Agendar Avaliação
               </a>
               <a href="#tratamentos" className="inline-flex items-center justify-center px-8 py-3.5 text-lg text-[#3b2c24] bg-[#b9b2a7] rounded-full hover:bg-[#a59e94] transition-colors">
@@ -136,7 +218,7 @@ export default function App() {
                   Suavize rugas de expressão e previna o envelhecimento. Aplicação precisa para um aspeto mais jovem e relaxado, mantendo a naturalidade e a expressividade da sua face.
                 </p>
                 <div>
-                  <a href="#" className="inline-flex items-center justify-center px-6 py-2.5 text-base text-white bg-[#eb6625] rounded-full hover:bg-[#d5591e] transition-colors">
+                  <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 text-base text-white bg-[#eb6625] rounded-full hover:bg-[#d5591e] transition-colors">
                     Agendar Avaliação
                   </a>
                 </div>
@@ -202,7 +284,7 @@ export default function App() {
                   Infusão de vitaminas e nutrientes essenciais diretamente na pele para hidratação profunda, luminosidade e proteção antioxidante.
                 </p>
                 <div>
-                  <a href="#" className="inline-flex items-center justify-center px-6 py-2.5 text-base text-white bg-[#eb6625] rounded-full hover:bg-[#d5591e] transition-colors">
+                  <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 text-base text-white bg-[#eb6625] rounded-full hover:bg-[#d5591e] transition-colors">
                     Agendar Avaliação
                   </a>
                 </div>
@@ -277,7 +359,7 @@ export default function App() {
             </div>
           </div>
 
-          <a href="#" className="inline-flex items-center justify-center px-8 py-3.5 text-lg text-white bg-[#82533a] rounded-full hover:bg-[#6e4631] transition-colors">
+          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3.5 text-lg text-white bg-[#82533a] rounded-full hover:bg-[#6e4631] transition-colors">
             Dar o primeiro passo
           </a>
         </section>
@@ -385,6 +467,8 @@ export default function App() {
           </div>
         </section>
 
+        <VideoCarousel />
+
         {/* Section: FAQ */}
         <section className="py-24 max-w-4xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] text-center mb-16">
@@ -392,18 +476,25 @@ export default function App() {
           </h2>
           
           <div className="space-y-4">
-            <div className="bg-[#714b38] rounded-xl px-8 py-5 flex items-center justify-between cursor-pointer hover:bg-[#634031] transition-colors">
-              <h3 className="text-xl text-white font-medium">Os tratamentos são muito caros na Galerie Clinic?</h3>
-              <ChevronDown className="w-5 h-5 text-white" strokeWidth={1.5} />
-            </div>
-            <div className="bg-[#714b38] rounded-xl px-8 py-5 flex items-center justify-between cursor-pointer hover:bg-[#634031] transition-colors">
-              <h3 className="text-xl text-white font-medium">Tenho receio de injetáveis. Os procedimentos são seguros?</h3>
-              <ChevronDown className="w-5 h-5 text-white" strokeWidth={1.5} />
-            </div>
-            <div className="bg-[#714b38] rounded-xl px-8 py-5 flex items-center justify-between cursor-pointer hover:bg-[#634031] transition-colors">
-              <h3 className="text-xl text-white font-medium">Qual o tempo de duração dos resultados?</h3>
-              <ChevronDown className="w-5 h-5 text-white" strokeWidth={1.5} />
-            </div>
+            {FAQ_ITEMS.map((item, i) => (
+              <div key={i} className="rounded-xl overflow-hidden">
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full bg-[#714b38] px-8 py-5 flex items-center justify-between cursor-pointer hover:bg-[#634031] transition-colors text-left"
+                >
+                  <h3 className="text-xl text-white font-medium pr-4">{item.question}</h3>
+                  <ChevronDown
+                    className={`w-5 h-5 text-white flex-shrink-0 transition-transform duration-300 ${openFaq === i ? 'rotate-180' : ''}`}
+                    strokeWidth={1.5}
+                  />
+                </button>
+                {openFaq === i && (
+                  <div className="bg-[#f3e4d5] px-8 py-6">
+                    <p className="text-base text-[#3b2c24] leading-relaxed">{item.answer}</p>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </section>
 
@@ -416,7 +507,7 @@ export default function App() {
             <p className="text-xl text-white/90 mb-10 font-medium">
               A sua jornada para uma beleza natural e duradoura começa agora. A nossa equipa aguarda para oferecer-lhe uma experiência única.
             </p>
-            <a href="#" className="inline-flex items-center justify-center px-10 py-4 text-lg text-[#3b2c24] bg-[#fbb693] rounded-full hover:bg-[#fac8b2] transition-colors font-medium">
+            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 text-lg text-[#3b2c24] bg-[#fbb693] rounded-full hover:bg-[#fac8b2] transition-colors font-medium">
               Agendar Avaliação
             </a>
           </div>
@@ -473,6 +564,21 @@ export default function App() {
           </p>
         </div>
       </footer>
+
+      {/* Floating WhatsApp Button */}
+      <a
+        href={WA_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+        aria-label="Contactar via WhatsApp"
+      >
+        <span className="absolute w-full h-full rounded-full bg-[#25D366] animate-ping opacity-40"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-8 h-8 fill-white" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.837L.057 23.527a.5.5 0 0 0 .638.635l5.74-1.503A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.946a9.946 9.946 0 0 1-5.092-1.399l-.364-.217-3.773.988.999-3.671-.237-.376A9.946 9.946 0 0 1 2.054 12C2.054 6.497 6.497 2.054 12 2.054S21.946 6.497 21.946 12 17.503 21.946 12 21.946z"/>
+        </svg>
+      </a>
     </div>
   );
 }
