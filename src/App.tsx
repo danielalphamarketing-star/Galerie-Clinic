@@ -548,10 +548,10 @@ export default function App() {
               Medicina estética de confiança no Porto, focada em resultados naturais e na sua individualidade.
             </p>
             <div className="flex gap-3">
-              <a href="https://www.instagram.com/galerie.clinic/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#82533a] text-white flex items-center justify-center hover:bg-[#6e4631] transition-colors">
+              <a href="https://www.instagram.com/galerieclinic/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#82533a] text-white flex items-center justify-center hover:bg-[#6e4631] transition-colors">
                 <Instagram className="w-5 h-5" strokeWidth={1.5} />
               </a>
-              <a href="https://www.facebook.com/galerie.clinic.porto" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#82533a] text-white flex items-center justify-center hover:bg-[#6e4631] transition-colors">
+              <a href="https://www.facebook.com/p/Galerie-Clinic-100093459514050/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#82533a] text-white flex items-center justify-center hover:bg-[#6e4631] transition-colors">
                 <Facebook className="w-5 h-5" strokeWidth={1.5} />
               </a>
             </div>
@@ -584,7 +584,7 @@ export default function App() {
             © 2026 Galerie Clinic. Todos os direitos reservados.
           </p>
           <p className="text-base text-[#3b2c24]">
-            Site Desenvolvido por <a href="https://alphamarketing.pt/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#eb6625]">Alpha Marketing Digital</a>
+            Site Desenvolvido por <a href="https://marketingalphadigital.com.br/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#eb6625]">Alpha Marketing Digital</a>
           </p>
         </div>
       </footer>
