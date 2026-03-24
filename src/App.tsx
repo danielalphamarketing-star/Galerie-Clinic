@@ -106,7 +106,7 @@ const LazyVideo = ({ src, isMuted, onMuteToggle }: { src: string, isMuted: boole
   const isMov = src.toLowerCase().endsWith('.mov');
 
   return (
-    <div ref={containerRef} className="w-full h-full relative bg-[#3b2c24]/5">
+    <div ref={containerRef} className="w-full h-full relative bg-[#3b2c24]/3">
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center z-10 bg-[#3b2c24]/5">
           <div className="w-8 h-8 border-2 border-[#82533a]/20 border-t-[#82533a] rounded-full animate-spin"></div>
@@ -137,12 +137,12 @@ const LazyVideo = ({ src, isMuted, onMuteToggle }: { src: string, isMuted: boole
   );
 };
 
-const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
+const LandingPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <div className="bg-[#fcfaf8] text-[#3b2c24] antialiased overflow-x-hidden font-sans">
+    <div className="bg-[#fcf9f5] text-[#333333] antialiased overflow-x-hidden font-sans">
       {/* Header Navigation */}
       <header className="w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
         <a href="#" className="flex items-center">
@@ -156,7 +156,7 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
           <a href="#contacte-nos" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Contacte-nos</a>
         </nav>
 
-        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="hidden md:inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#eb6625] text-white text-base font-medium hover:bg-[#d5591e] transition-colors">
+        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="hidden md:inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#824A2F] text-white text-base font-medium hover:bg-[#6b3d27] transition-colors">
           Agendar Consulta
         </a>
 
@@ -176,7 +176,7 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
             <a href="#como-funcionamos" onClick={() => setIsMenuOpen(false)} className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Como Funcionamos</a>
             <a href="#resultados" onClick={() => setIsMenuOpen(false)} className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Resultados</a>
             <a href="#contacte-nos" onClick={() => setIsMenuOpen(false)} className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Contacte-nos</a>
-            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#eb6625] text-white text-base font-medium hover:bg-[#d5591e] transition-colors w-full">
+            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#824A2F] text-white text-base font-medium hover:bg-[#6b3d27] transition-colors w-full">
               Agendar Consulta
             </a>
           </nav>
@@ -187,8 +187,8 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
         {/* Hero Section */}
         <section className="max-w-7xl mx-auto px-6 pt-12 pb-24 flex flex-col md:flex-row items-center gap-12 md:gap-16">
           <div className="w-full md:w-1/2">
-            <h1 className="text-5xl md:text-[3.5rem] font-medium tracking-tight text-[#3b2c24] leading-[1.1] mb-6">
-              Revele a Sua Beleza Natural com <span className="font-serif italic text-[#eb6625]">quem entende</span> de excelência.
+            <h1 className="text-5xl md:text-[3.5rem] font-medium tracking-tight text-[#333333] leading-[1.1] mb-6">
+              A excelência da medicina estética, refletida na sua <span className="font-serif italic text-[#824A2F]">naturalidade.</span>
             </h1>
             <p className="text-lg text-[#3b2c24] mb-10 leading-relaxed max-w-lg">
               Na Galerie Clinic, cada detalhe é pensado para revelar a sua melhor versão com tratamentos modernos, atendimento humanizado e resultados que encantam.
@@ -204,27 +204,17 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
           </div>
           
           <div className="w-full md:w-1/2">
-            <div className="relative w-full aspect-[4/3] md:aspect-auto md:h-[500px] overflow-hidden rounded-tr-[5rem] rounded-bl-[5rem] rounded-tl-2xl rounded-br-2xl">
+            <div className="relative w-full aspect-[4/3] md:aspect-auto md:h-[500px] overflow-hidden rounded-tr-[6rem] rounded-bl-[6rem] rounded-tl-3xl rounded-br-3xl">
               <img src="/assets/PRF00474.jpg" alt="Profissional Galerie Clinic" className="object-cover w-full h-full object-top" />
             </div>
           </div>
         </section>
 
-        {/* Marquee Ticker 1 */}
-        {showMarquee && (
-          <div className="bg-[#82533a] text-white py-6 overflow-hidden flex whitespace-nowrap">
-            <div className="animate-marquee flex gap-8 items-center">
-              {[...Array(10)].map((_, i) => (
-                <span key={i} className="text-3xl font-normal tracking-wide uppercase">Resultados Naturais • Beleza com Essência • Medicina Estética de Precisão • Galerie Clinic Porto • </span>
-              ))}
-            </div>
-          </div>
-        )}
 
         {/* Section: Sente que os sinais... */}
         <section className="py-24 max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16 md:gap-24">
           <div className="w-full md:w-5/12 relative">
-            <div className="rounded-tr-[4rem] rounded-bl-[4rem] rounded-tl-2xl rounded-br-2xl overflow-hidden aspect-square">
+            <div className="rounded-tr-[5rem] rounded-bl-[5rem] rounded-tl-3xl rounded-br-3xl overflow-hidden aspect-square">
               <img src="/assets/aging_essence.png" alt="Resultados Naturais" className="object-cover w-full h-full" />
             </div>
             
@@ -241,8 +231,8 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
           </div>
 
           <div className="w-full md:w-7/12">
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] mb-6 leading-[1.1]">
-              Sente que os sinais do tempo estão a <span className="font-serif italic text-[#eb6625]">apagar</span> a sua essência?
+            <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#333333] mb-6 leading-[1.1]">
+              Onde a ciência e a elegância se encontram para <span className="font-serif italic text-[#824A2F]">preservar</span> a sua essência.
             </h2>
             <div className="space-y-4 text-lg text-[#3b2c24] leading-relaxed">
               <p>
@@ -262,20 +252,20 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
         <section id="tratamentos" className="py-24 max-w-6xl mx-auto px-6 flex flex-col items-center">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] text-center mb-16">
             As nossas especialidades<br />
-            em <span className="font-serif italic text-[#eb6625]">Medicina Estética.</span>
+            em <span className="font-serif italic text-[#824A2F]">Medicina Estética.</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
             
             {/* Botox (Wide) */}
-            <div className="md:col-span-2 bg-[#c69d7b] rounded-3xl overflow-hidden flex flex-col md:flex-row relative min-h-[300px]">
+            <div className="md:col-span-2 bg-[#c69d7b] rounded-[3rem] overflow-hidden flex flex-col md:flex-row relative min-h-[300px]">
               <div className="p-8 md:p-12 md:w-1/2 flex flex-col justify-center z-10">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-4">Botox (Toxina<br />Botulínica)</h3>
                 <p className="text-base text-white/90 mb-6 leading-relaxed">
                   Suavize rugas de expressão e previna o envelhecimento. Aplicação precisa para um aspeto mais jovem e relaxado, mantendo a naturalidade e a expressividade da sua face.
                 </p>
                 <div>
-                  <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 text-base text-white bg-[#eb6625] rounded-full hover:bg-[#d5591e] transition-colors">
+                  <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 text-base text-white bg-[#824A2F] rounded-full hover:bg-[#6b3d27] transition-colors">
                     Agendar Avaliação
                   </a>
                 </div>
@@ -286,7 +276,7 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
             </div>
 
             {/* Preenchimento Labial */}
-            <div className="relative bg-slate-900 rounded-3xl overflow-hidden min-h-[300px]">
+            <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[300px]">
               <img src="/assets/specialty_labial.png" alt="Preenchimento Labial" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
@@ -298,7 +288,7 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
             </div>
 
             {/* Bioestimuladores */}
-            <div className="relative bg-slate-900 rounded-3xl overflow-hidden min-h-[300px]">
+            <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[300px]">
               <img src="/assets/specialty_bioestimuladores.png" alt="Bioestimuladores" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
@@ -310,7 +300,7 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
             </div>
 
             {/* Laser */}
-            <div className="relative bg-slate-900 rounded-3xl overflow-hidden min-h-[300px]">
+            <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[300px]">
               <img src="/assets/specialty_laser.png" alt="Laser" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
@@ -322,7 +312,7 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
             </div>
 
             {/* PRP */}
-            <div className="relative bg-slate-900 rounded-3xl overflow-hidden min-h-[300px]">
+            <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[300px]">
               <img src="/assets/specialty_prp.png" alt="PRP Capilar" className="absolute inset-0 w-full h-full object-cover opacity-90 object-top" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
@@ -334,14 +324,14 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
             </div>
 
             {/* Vitaminas (Wide) */}
-            <div className="md:col-span-3 bg-[#82533a] rounded-3xl overflow-hidden flex flex-col md:flex-row relative min-h-[300px]">
+            <div className="md:col-span-3 bg-[#82533a] rounded-[3rem] overflow-hidden flex flex-col md:flex-row relative min-h-[300px]">
               <div className="p-8 md:p-12 md:w-1/2 flex flex-col justify-center z-10">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-4">Vitaminas e Nutrição Dérmica</h3>
                 <p className="text-base text-white/90 mb-6 leading-relaxed">
                   Infusão de vitaminas e nutrientes essenciais diretamente na pele para hidratação profunda, luminosidade e proteção antioxidante.
                 </p>
                 <div>
-                  <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 text-base text-white bg-[#eb6625] rounded-full hover:bg-[#d5591e] transition-colors">
+                  <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 text-base text-white bg-[#824A2F] rounded-full hover:bg-[#6b3d27] transition-colors">
                     Agendar Avaliação
                   </a>
                 </div>
@@ -354,21 +344,11 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
           </div>
         </section>
 
-        {/* Marquee Ticker 2 */}
-        {showMarquee && (
-          <div className="bg-[#82533a] text-white py-6 overflow-hidden flex whitespace-nowrap">
-            <div className="animate-marquee flex gap-8 items-center">
-              {[...Array(10)].map((_, i) => (
-                <span key={i} className="text-3xl font-normal tracking-wide uppercase">Resultados Naturais • Beleza com Essência • Medicina Estética de Precisão • Galerie Clinic Porto • </span>
-              ))}
-            </div>
-          </div>
-        )}
 
         {/* Section: Como funciona a sua jornada */}
         <section id="como-funcionamos" className="py-24 max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
-          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] mb-4">
-            Como funciona a <span className="font-serif italic text-[#eb6625]">sua jornada</span> connosco?
+          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#333333] mb-4">
+            Como funciona a <span className="font-serif italic text-[#824A2F]">sua jornada</span> connosco?
           </h2>
           <p className="text-lg text-[#3b2c24] mb-20 max-w-2xl">
             Um processo simples, transparente e focado em si, desde o primeiro contacto até ao acompanhamento final.
@@ -381,11 +361,11 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
             {/* Step 1 */}
             <div className="w-full md:w-1/3 flex flex-col items-center relative bg-[#fcfaf8]">
               <div className="w-32 h-32 rounded-full bg-gradient-to-b from-[#fbb693] to-[#fac8b2] flex items-center justify-center mb-6 shadow-sm">
-                <div className="w-16 h-16 rounded-full bg-[#eb6625] flex items-center justify-center text-white">
+                <div className="w-16 h-16 rounded-full bg-[#824A2F] flex items-center justify-center text-white">
                   <MessageSquare className="w-7 h-7" strokeWidth={1.5} />
                 </div>
               </div>
-              <h3 className="text-2xl font-medium tracking-tight text-[#eb6625] mb-4">Triagem Inicial</h3>
+              <h3 className="text-2xl font-medium tracking-tight text-[#824A2F] mb-4">Triagem Inicial</h3>
               <p className="text-base text-[#3b2c24] leading-relaxed max-w-[260px]">
                 Entre em contacto via WhatsApp. A nossa equipa fará uma breve triagem para entender as suas necessidades e apresentar os valores.
               </p>
@@ -394,11 +374,11 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
             {/* Step 2 */}
             <div className="w-full md:w-1/3 flex flex-col items-center relative bg-[#fcfaf8]">
               <div className="w-32 h-32 rounded-full bg-gradient-to-b from-[#fbb693] to-[#fac8b2] flex items-center justify-center mb-6 shadow-sm">
-                <div className="w-16 h-16 rounded-full bg-[#eb6625] flex items-center justify-center text-white">
+                <div className="w-16 h-16 rounded-full bg-[#824A2F] flex items-center justify-center text-white">
                   <ScanFace className="w-7 h-7" strokeWidth={1.5} />
                 </div>
               </div>
-              <h3 className="text-2xl font-medium tracking-tight text-[#eb6625] mb-4">Consulta Médica</h3>
+              <h3 className="text-2xl font-medium tracking-tight text-[#824A2F] mb-4">Consulta Médica</h3>
               <p className="text-base text-[#3b2c24] leading-relaxed max-w-[260px]">
                 Agende a sua consulta com a nossa equipa médica especializada para elaborar um plano de tratamento personalizado. O valor é descontado no procedimento.
               </p>
@@ -407,11 +387,11 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
             {/* Step 3 */}
             <div className="w-full md:w-1/3 flex flex-col items-center relative bg-[#fcfaf8]">
               <div className="w-32 h-32 rounded-full bg-gradient-to-b from-[#fbb693] to-[#fac8b2] flex items-center justify-center mb-6 shadow-sm">
-                <div className="w-16 h-16 rounded-full bg-[#eb6625] flex items-center justify-center text-white">
+                <div className="w-16 h-16 rounded-full bg-[#824A2F] flex items-center justify-center text-white">
                   <Star className="w-7 h-7" strokeWidth={1.5} />
                 </div>
               </div>
-              <h3 className="text-2xl font-medium tracking-tight text-[#eb6625] mb-4">Tratamento & Cuidado</h3>
+              <h3 className="text-2xl font-medium tracking-tight text-[#824A2F] mb-4">Tratamento & Cuidado</h3>
               <p className="text-base text-[#3b2c24] leading-relaxed max-w-[260px]">
                 Realização do procedimento com máximo conforto, segurança e foco em resultados naturais, seguido de acompanhamento próximo.
               </p>
@@ -448,7 +428,7 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
         {/* Testimonials Section */}
         <section id="resultados" className="py-24 max-w-6xl mx-auto px-6 flex flex-col items-center">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] text-center mb-4">
-            O que as <span className="font-serif italic text-[#82533a]">nossas clientes</span> dizem
+            O que as <span className="font-serif italic text-[#824A2F]">nossas clientes</span> dizem
           </h2>
           <p className="text-lg text-[#3b2c24] text-center mb-16 max-w-md">
             A nossa maior recompensa é a confiança e a satisfação de quem nos escolhe
@@ -456,7 +436,7 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
             {/* Card 1 */}
-            <div className="bg-[#f3e4d5] rounded-xl p-8 flex flex-col shadow-sm">
+            <div className="bg-[#f3e4d5] rounded-[2rem] p-8 flex flex-col shadow-sm">
               <div className="flex gap-1 text-[#3b2c24] mb-6">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-5 h-5" strokeWidth={1.5} fill="currentColor" />
@@ -479,7 +459,7 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
             </div>
 
             {/* Card 2 */}
-            <div className="bg-[#f3e4d5] rounded-xl p-8 flex flex-col shadow-sm">
+            <div className="bg-[#f3e4d5] rounded-[2rem] p-8 flex flex-col shadow-sm">
               <div className="flex gap-1 text-[#3b2c24] mb-6">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-5 h-5" strokeWidth={1.5} fill="currentColor" />
@@ -489,7 +469,7 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
                 "A minha maior preocupação era ficar com os lábios exagerados. A equipa da Galerie Clinic fez um trabalho incrível com preenchimento labial, ficou super subtil e natural. Sinto-me muito mais confiante e bonita. Recomendo a 100%!"
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#eb6625] text-white flex items-center justify-center text-xl font-medium">
+                <div className="w-12 h-12 rounded-full bg-[#824A2F] text-white flex items-center justify-center text-xl font-medium">
                   S
                 </div>
                 <div>
@@ -502,7 +482,7 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
             </div>
 
             {/* Card 3 */}
-            <div className="bg-[#f3e4d5] rounded-xl p-8 flex flex-col shadow-sm">
+            <div className="bg-[#f3e4d5] rounded-[2rem] p-8 flex flex-col shadow-sm">
               <div className="flex gap-1 text-[#3b2c24] mb-6">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-5 h-5" strokeWidth={1.5} fill="currentColor" />
@@ -531,12 +511,12 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
         {/* Section: FAQ */}
         <section className="py-24 max-w-4xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] text-center mb-16">
-            Perguntas <span className="font-serif italic text-[#eb6625]">Frequentes</span>
+            Perguntas <span className="font-serif italic text-[#824A2F]">Frequentes</span>
           </h2>
           
           <div className="space-y-4">
             {FAQ_ITEMS.map((item, i) => (
-              <div key={i} className="rounded-xl overflow-hidden">
+              <div key={i} className="rounded-[2rem] overflow-hidden">
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full bg-[#714b38] px-8 py-5 flex items-center justify-between cursor-pointer hover:bg-[#634031] transition-colors text-left"
@@ -605,10 +585,10 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
           <div className="flex flex-col">
             <h4 className="text-xl font-medium text-[#3b2c24] mb-6">Links Úteis</h4>
             <div className="flex flex-col gap-3">
-              <a href="#tratamentos" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Tratamentos</a>
-              <a href="#como-funcionamos" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Como Funcionamos</a>
-              <a href="#resultados" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Resultados</a>
-              <a href="#" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Política de Privacidade</a>
+              <a href="#tratamentos" className="text-lg text-[#3b2c24] hover:text-[#824A2F] transition-colors">Tratamentos</a>
+              <a href="#como-funcionamos" className="text-lg text-[#3b2c24] hover:text-[#824A2F] transition-colors">Como Funcionamos</a>
+              <a href="#resultados" className="text-lg text-[#3b2c24] hover:text-[#824A2F] transition-colors">Resultados</a>
+              <a href="#" className="text-lg text-[#3b2c24] hover:text-[#824A2F] transition-colors">Política de Privacidade</a>
             </div>
           </div>
 
@@ -647,7 +627,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/page2" element={<LandingPage showMarquee={false} />} />
+        <Route path="/page2" element={<LandingPage />} />
       </Routes>
     </BrowserRouter>
   );
