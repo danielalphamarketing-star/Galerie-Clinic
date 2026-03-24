@@ -6,18 +6,18 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 const WA_LINK = 'https://wa.me/351916660005?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Galerie%20Clinic.';
 
 const VIDEO_SOURCES = [
-  '/videos/LIMPEZA_v2_1.mov',
-  '/videos/LIMPEZA_v2_3.mov',
-  '/videos/MASSAGEM_12.mov',
-  '/videos/MASSAGEM_8.mov',
+  '/videos/LIMPEZA_v2_1.mp4',
+  '/videos/LIMPEZA_v2_3.mp4',
+  '/videos/MASSAGEM_12.mp4',
+  '/videos/MASSAGEM_8.mp4',
   '/videos/SKIN_GIRLS_2.mp4',
   '/videos/SKIN_GIRLS_3.mp4',
-  '/videos/LIMPEZAS_11.mov',
-  '/videos/LIMPEZAS_4.mov',
-  '/videos/LIMPEZAS_8.mov',
-  '/videos/LIMPEZAS_9.mov',
-  '/videos/MASSAGEM_2.mov',
-  '/videos/MASSAGEM_5.mov',
+  '/videos/LIMPEZAS_11.mp4',
+  '/videos/LIMPEZAS_4.mp4',
+  '/videos/LIMPEZAS_8.mp4',
+  '/videos/LIMPEZAS_9.mp4',
+  '/videos/MASSAGEM_2.mp4',
+  '/videos/MASSAGEM_5.mp4',
 ];
 
 const FAQ_ITEMS = [
@@ -53,6 +53,7 @@ const VideoCarousel = () => {
       <div className="relative flex">
         <motion.div
           className="flex gap-4 px-4"
+          style={{ willChange: "transform" }}
           animate={{ x: [0, -3168] }}
           transition={{
             duration: 90, // Even slower for performance
@@ -77,37 +78,59 @@ const VideoCarousel = () => {
 
 const LazyVideo = ({ src, isMuted, onMuteToggle }: { src: string, isMuted: boolean, onMuteToggle: (v: HTMLVideoElement) => void }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const isInView = useInView(videoRef, { margin: "500px" });
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { margin: "600px" });
+  const [hasStartedLoading, setHasStartedLoading] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (isInView && !hasStartedLoading) {
+      setHasStartedLoading(true);
+    }
+  }, [isInView, hasStartedLoading]);
 
   useEffect(() => {
     if (!videoRef.current) return;
     if (isInView) {
-      videoRef.current.play().catch(() => {});
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Auto-play might be blocked or file might fail to load
+        });
+      }
     } else {
       videoRef.current.pause();
     }
-  }, [isInView]);
+  }, [isInView, hasStartedLoading]);
+
+  const isMov = src.toLowerCase().endsWith('.mov');
 
   return (
-    <div className="w-full h-full relative bg-[#3b2c24]/5">
+    <div ref={containerRef} className="w-full h-full relative bg-[#3b2c24]/5">
       {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center z-10 bg-[#3b2c24]/5">
           <div className="w-8 h-8 border-2 border-[#82533a]/20 border-t-[#82533a] rounded-full animate-spin"></div>
         </div>
       )}
       <video
         ref={videoRef}
-        src={isInView ? src : undefined}
         className={`w-full h-full object-cover cursor-pointer transition-opacity duration-700 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
         muted={isMuted}
         loop
         playsInline
-        preload="none"
+        preload="metadata"
         onLoadedData={() => setIsLoading(false)}
         onClick={(e) => onMuteToggle(e.currentTarget)}
-      />
-      <div className="absolute bottom-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full text-white pointer-events-none">
+      >
+        {hasStartedLoading && (
+          <>
+            <source src={src} type={isMov ? "video/quicktime" : "video/mp4"} />
+            {/* Fallback for browsers that might need specific order or extension check */}
+            {!isMov && <source src={src} type="video/mp4" />}
+          </>
+        )}
+      </video>
+      <div className="absolute bottom-4 right-4 bg-white/10 backdrop-blur-md p-2 rounded-full text-white pointer-events-none z-20">
         {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
       </div>
     </div>
