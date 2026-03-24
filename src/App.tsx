@@ -55,7 +55,7 @@ const VideoCarousel = () => {
           className="flex gap-4 px-4"
           animate={{ x: [0, -3168] }}
           transition={{
-            duration: 80, // Slower for better performance and readability
+            duration: 90, // Even slower for performance
             repeat: Infinity,
             ease: "linear",
           }}
@@ -77,7 +77,8 @@ const VideoCarousel = () => {
 
 const LazyVideo = ({ src, isMuted, onMuteToggle }: { src: string, isMuted: boolean, onMuteToggle: (v: HTMLVideoElement) => void }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const isInView = useInView(videoRef, { margin: "200px" });
+  const isInView = useInView(videoRef, { margin: "500px" });
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (!videoRef.current) return;
@@ -89,15 +90,21 @@ const LazyVideo = ({ src, isMuted, onMuteToggle }: { src: string, isMuted: boole
   }, [isInView]);
 
   return (
-    <div className="w-full h-full relative">
+    <div className="w-full h-full relative bg-[#3b2c24]/5">
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-8 h-8 border-2 border-[#82533a]/20 border-t-[#82533a] rounded-full animate-spin"></div>
+        </div>
+      )}
       <video
         ref={videoRef}
         src={isInView ? src : undefined}
-        className="w-full h-full object-cover cursor-pointer"
+        className={`w-full h-full object-cover cursor-pointer transition-opacity duration-700 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
         muted={isMuted}
         loop
         playsInline
         preload="none"
+        onLoadedData={() => setIsLoading(false)}
         onClick={(e) => onMuteToggle(e.currentTarget)}
       />
       <div className="absolute bottom-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full text-white pointer-events-none">
@@ -394,7 +401,7 @@ const LandingPage = ({ showMarquee = true }: { showMarquee?: boolean }) => {
         </section>
 
         {/* Stats Section */}
-        <section className="bg-[#eb6625] py-16 w-full">
+        <section className="bg-[#824A2F] py-16 w-full">
           <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/20">
             <div className="text-center px-4">
               <div className="text-5xl md:text-6xl font-medium tracking-tight text-white mb-2">10+</div>
