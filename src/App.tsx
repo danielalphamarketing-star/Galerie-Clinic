@@ -6,18 +6,18 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 const WA_LINK = 'https://wa.me/351916660005?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Galerie%20Clinic.';
 
 const VIDEO_SOURCES = [
-  '/videos/LIMPEZA_v2_1.mp4',
-  '/videos/LIMPEZA_v2_3.mp4',
-  '/videos/MASSAGEM_12.mp4',
-  '/videos/MASSAGEM_8.mp4',
-  '/videos/SKIN_GIRLS_2.mp4',
-  '/videos/SKIN_GIRLS_3.mp4',
-  '/videos/LIMPEZAS_11.mp4',
-  '/videos/LIMPEZAS_4.mp4',
-  '/videos/LIMPEZAS_8.mp4',
-  '/videos/LIMPEZAS_9.mp4',
-  '/videos/MASSAGEM_2.mp4',
-  '/videos/MASSAGEM_5.mp4',
+  '/videos/v5.mp4',
+  '/videos/v6.mp4',
+  '/videos/v7.mp4',
+  '/videos/v10.mp4',
+  '/videos/v11.mp4',
+  '/videos/v12.mp4',
+  '/videos/v1.mp4',
+  '/videos/v2.mp4',
+  '/videos/v3.mp4',
+  '/videos/v4.mp4',
+  '/videos/v8.mp4',
+  '/videos/v9.mp4',
 ];
 
 const FAQ_ITEMS = [
