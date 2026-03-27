@@ -192,40 +192,39 @@ const ResultadosSection = () => {
   );
 };
 
-const ClinicGallery = () => {
-  const images = [
-    '/assets/clinic/clinic_1.jpg', '/assets/clinic/clinic_2.jpg', '/assets/clinic/clinic_3.jpg',
-    '/assets/clinic/clinic_4.jpg', '/assets/clinic/clinic_5.jpg', '/assets/clinic/clinic_6.jpg',
-    '/assets/clinic/clinic_7.jpg', '/assets/clinic/clinic_8.jpg', '/assets/clinic/clinic_9.jpg',
-    '/assets/clinic/clinic_10.jpg', '/assets/clinic/clinic_11.jpg', '/assets/clinic/clinic_12.jpg'
-  ];
-
+const AboutSpaceSection = () => {
   return (
-    <section id="clinica" className="py-24 bg-[#fcf9f5]">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] mb-4">
-            Venha conhecer a nossa clínica
-          </h2>
-          <p className="text-lg text-[#3b2c24]/80 max-w-2xl mx-auto">
-            Um espaço pensado para o seu bem-estar, com tecnologia de ponta e uma equipa dedicada a si.
-          </p>
+    <section id="clinica" className="bg-[#ada69a] py-24 px-6 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-stretch">
+        {/* Left Card: Image */}
+        <div 
+          className="w-full md:w-1/2 bg-[#eee9e2] rounded-[50px] overflow-hidden shadow-sm"
+        >
+          <img 
+            src="/assets/clinic/clinic_interior_1.jpg" 
+            alt="Galerie Clinic - O nosso espaço" 
+            className="w-full h-full object-cover min-h-[400px]"
+          />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-          {images.map((img, i) => (
-            <div 
-              key={i} 
-              className="group relative aspect-[4/5] rounded-[2rem] overflow-hidden bg-slate-100 transition-all duration-500 hover:shadow-2xl"
-            >
-              <img 
-                src={img} 
-                alt={`Galerie Clinic - Instalações ${i + 1}`} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
-            </div>
-          ))}
+        {/* Right Card: Text */}
+        <div 
+          className="w-full md:w-1/2 bg-[#eee9e2] rounded-[50px] p-12 lg:p-20 flex flex-col justify-center shadow-sm"
+        >
+          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#3b2c24]/60 mb-8 block">
+            A Nossa Clínica
+          </span>
+          <h2 className="text-3xl lg:text-5xl font-medium tracking-tight text-[#3b2c24] mb-10 leading-[1.15]">
+            Bem-vinda à Galerie Clinic, onde a beleza se encontra com a inovação no coração da encantadora cidade com vista para o deslumbrante Rio Douro.
+          </h2>
+          <div className="space-y-8 text-lg lg:text-xl text-[#3b2c24]/80 leading-relaxed font-light">
+            <p>
+              A nossa clínica destaca-se como um farol de excelência, oferecendo tratamentos estéticos avançados executados por uma equipa multidisciplinar de profissionais altamente qualificados.
+            </p>
+            <p>
+              O espaço foi meticulosamente desenhado para unir a sofisticação ao conforto, criando uma atmosfera que promove o relaxamento e o bem-estar durante toda a sua jornada connosco.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -664,7 +663,7 @@ const LandingPage = () => {
 
 
         {/* Section: Clinical Gallery */}
-        <ClinicGallery />
+        <AboutSpaceSection />
 
 
         {/* Section: FAQ */}
