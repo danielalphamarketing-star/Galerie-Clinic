@@ -193,18 +193,37 @@ const ResultadosSection = () => {
 };
 
 const AboutSpaceSection = () => {
+  const [currentImg, setCurrentImg] = React.useState(0);
+  const images = [
+    '/assets/clinic_interior_1.jpg',
+    '/assets/clinic_interior_2.jpg',
+    '/assets/clinic_interior_3.jpg'
+  ];
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImg((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="clinica" className="bg-[#ada69a] py-32 px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-stretch">
-        {/* Left Card: Image */}
+        {/* Left Card: Slideshow of Images */}
         <div 
-          className="w-full md:w-1/2 bg-[#eee9e2] rounded-[50px] overflow-hidden shadow-sm flex items-center justify-center p-0"
+          className="w-full md:w-1/2 bg-[#eee9e2] rounded-[50px] overflow-hidden shadow-sm relative min-h-[500px]"
         >
-          <img 
-            src="/assets/clinic_interior_1.jpg" 
-            alt="Galerie Clinic - O nosso espaço" 
-            className="w-full h-full object-cover min-h-[500px]"
-          />
+          {images.map((img, idx) => (
+            <img 
+              key={idx}
+              src={img} 
+              alt={`Galerie Clinic - O nosso espaço ${idx + 1}`} 
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                idx === currentImg ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          ))}
         </div>
 
         {/* Right Card: Text */}
