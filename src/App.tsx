@@ -162,7 +162,7 @@ const ResultadosSection = () => {
     <section id="resultados" className="pb-24 pt-12 bg-[#fcf9f5] overflow-hidden border-t border-[#3b2c24]/5">
       <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
         <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24]">
-          Antes & Depois de nossos paciente.
+          Antes e Depois dos nossos pacientes
         </h2>
       </div>
 
@@ -187,6 +187,88 @@ const ResultadosSection = () => {
             </div>
           ))}
         </motion.div>
+      </div>
+    </section>
+  );
+};
+
+const ContactForm = () => {
+  return (
+    <section id="contacto" className="py-24 bg-white">
+      <div className="max-w-3xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] mb-4">
+            Inicie o seu caminho
+          </h2>
+          <p className="text-lg text-[#3b2c24]/80">
+            Fale connosco e descubra o plano de tratamento ideal para si.
+          </p>
+        </div>
+
+        <form className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex flex-col gap-2">
+              <label htmlFor="nome" className="text-sm font-medium text-[#3b2c24]/70 ml-1">Nome</label>
+              <input 
+                type="text" 
+                id="nome"
+                className="w-full px-6 py-4 rounded-2xl bg-[#fcf9f5] border border-[#3b2c24]/10 focus:outline-none focus:border-[#824A2F]/30 transition-colors"
+                placeholder="O seu nome completo"
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="email" className="text-sm font-medium text-[#3b2c24]/70 ml-1">E-mail</label>
+              <input 
+                type="email" 
+                id="email"
+                className="w-full px-6 py-4 rounded-2xl bg-[#fcf9f5] border border-[#3b2c24]/10 focus:outline-none focus:border-[#824A2F]/30 transition-colors"
+                placeholder="seu@email.com"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex flex-col gap-2">
+              <label htmlFor="telefone" className="text-sm font-medium text-[#3b2c24]/70 ml-1">Telemóvel / Contacto</label>
+              <input 
+                type="tel" 
+                id="telefone"
+                className="w-full px-6 py-4 rounded-2xl bg-[#fcf9f5] border border-[#3b2c24]/10 focus:outline-none focus:border-[#824A2F]/30 transition-colors"
+                placeholder="+351 --- --- ---"
+              />
+            </div>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="procedimento" className="text-sm font-medium text-[#3b2c24]/70 ml-1">Em que procedimento está interessado?</label>
+              <select 
+                id="procedimento"
+                className="w-full px-6 py-4 rounded-2xl bg-[#fcf9f5] border border-[#3b2c24]/10 focus:outline-none focus:border-[#824A2F]/30 transition-colors appearance-none"
+              >
+                <option value="">Selecione uma opção</option>
+                <option value="toxina">Toxina Botulínica</option>
+                <option value="labial">Hidratação Labial</option>
+                <option value="bioestimuladores">Bioestimuladores</option>
+                <option value="outros">Outros Tratamentos</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <label htmlFor="mensagem" className="text-sm font-medium text-[#3b2c24]/70 ml-1">Como podemos ajudar?</label>
+            <textarea 
+              id="mensagem"
+              rows={4}
+              className="w-full px-6 py-4 rounded-2xl bg-[#fcf9f5] border border-[#3b2c24]/10 focus:outline-none focus:border-[#824A2F]/30 transition-colors resize-none"
+              placeholder="Conte-nos o que procura..."
+            ></textarea>
+          </div>
+
+          <button 
+            type="submit"
+            className="w-full py-5 bg-[#824A2F] text-white rounded-full text-lg font-medium hover:bg-[#6b3d27] transition-all transform hover:scale-[1.01] active:scale-[0.99] shadow-lg"
+          >
+            Enviar Mensagem
+          </button>
+        </form>
       </div>
     </section>
   );
@@ -285,9 +367,9 @@ const LandingPage = () => {
           {/* Left Side: Image */}
           <div className="w-full md:w-1/2 relative h-[400px] md:h-auto">
             <img 
-              src="/assets/PRF00474.jpg" 
-              alt="Galerie Clinic - A nossa essência" 
-              className="absolute inset-0 w-full h-full object-cover object-top"
+              src="/assets/skingirls.jpg" 
+              alt="Galerie Clinic - A nossa equipa" 
+              className="absolute inset-0 w-full h-full object-cover object-center"
             />
             {/* Overlay Badge from previous design if needed, but mockup doesn't have it */}
             <div className="absolute top-8 left-8 z-20 w-32 h-32 bg-[#82533a] rounded-full hidden md:flex items-center justify-center p-2 shadow-lg scale-75 origin-top-left">
@@ -354,7 +436,7 @@ const LandingPage = () => {
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Hidratação Labial</h3>
                 <p className="text-base text-white/90 leading-relaxed">
-                  Realce os seus lábios com ácido hialuronico, sem exageros. Consiga um contorno elegante e devolva ao lábio o volume que já teve.
+                  Realce os seus lábios com ácido hialurónico, sem exageros. Consiga um contorno elegante e devolva ao lábio o volume que já teve.
                 </p>
               </div>
             </div>
@@ -488,20 +570,22 @@ const LandingPage = () => {
           </div>
         </section>
 
-        {/* Final CTA Section */}
-        <section id="contacte-nos" className="bg-[#714b38] py-24 px-6 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-white mb-6 leading-tight">
-              Pronta para realçar a sua<br />beleza de forma autêntica e segura?
+        {/* Section: CTA */}
+        <section className="py-24 bg-[#824A2F] text-white text-center">
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-8 leading-[1.1]">
+              Preparada para elevar a sua<br />beleza de forma autêntica e segura?
             </h2>
-            <p className="text-xl text-white/90 mb-10 font-medium">
+            <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto font-light">
               O seu caminho para uma beleza natural e duradoura começa agora. A nossa equipa aguarda para oferecer-lhe uma experiência única.
             </p>
-            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 text-lg text-[#3b2c24] bg-[#fbb693] rounded-full hover:bg-[#fac8b2] transition-colors font-medium">
+            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-12 py-5 bg-[#eb9c7d] text-white rounded-full text-lg font-medium hover:bg-[#d48c70] transition-all transform hover:scale-105 shadow-2xl">
               Agendar Avaliação
             </a>
           </div>
         </section>
+
+        <ContactForm />
       </main>
 
       {/* Footer */}
