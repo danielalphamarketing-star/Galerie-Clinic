@@ -188,7 +188,7 @@ const LandingPage = () => {
         <section className="max-w-7xl mx-auto px-6 pt-12 pb-24 flex flex-col md:flex-row items-center gap-12 md:gap-16">
           <div className="w-full md:w-1/2">
             <h1 className="text-5xl md:text-[3.5rem] font-medium tracking-tight text-[#333333] leading-[1.1] mb-6">
-              A excelência da medicina estética, refletida na sua <span className="font-serif italic text-[#824A2F]">naturalidade.</span>
+              A excelência da medicina estética, refletida na sua naturalidade.
             </h1>
             <p className="text-lg text-[#3b2c24] mb-10 leading-relaxed max-w-lg">
               Na Galerie Clinic, cada detalhe é pensado para revelar a sua melhor versão com tratamentos modernos, atendimento humanizado e resultados que encantam.
@@ -226,13 +226,13 @@ const LandingPage = () => {
                   <textPath href="#circle-text" startOffset="0%">Galerie Clinic Estética • </textPath>
                 </text>
               </svg>
-              <span className="absolute text-3xl font-serif text-white">G</span>
+              <span className="absolute text-3xl font-sans font-medium text-white">G</span>
             </div>
           </div>
 
           <div className="w-full md:w-7/12">
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#333333] mb-6 leading-[1.1]">
-              Onde a ciência e a elegância se encontram para <span className="font-serif italic text-[#824A2F]">preservar</span> a sua essência.
+              Onde a ciência e a elegância se encontram para preservar a sua essência.
             </h2>
             <div className="space-y-4 text-lg text-[#3b2c24] leading-relaxed">
               <p>
@@ -252,7 +252,7 @@ const LandingPage = () => {
         <section id="tratamentos" className="py-24 max-w-6xl mx-auto px-6 flex flex-col items-center">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] text-center mb-16">
             As nossas especialidades<br />
-            em <span className="font-serif italic text-[#824A2F]">Medicina Estética.</span>
+            em Medicina Estética.
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
@@ -348,23 +348,15 @@ const LandingPage = () => {
         {/* Section: Como funciona a sua jornada */}
         <section id="como-funcionamos" className="py-24 max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#333333] mb-4">
-            Como funciona o <span className="font-serif italic text-[#824A2F]">seu acompanhamento</span> connosco?
+            Como funciona o seu acompanhamento connosco?
           </h2>
           <p className="text-lg text-[#3b2c24] mb-20 max-w-2xl">
             um processo simples, transparente e focado em si, desde o primeiro contacto.
           </p>
 
           <div className="relative w-full flex flex-col md:flex-row justify-between items-start mb-16 gap-12 md:gap-0">
-            {/* Connecting Line */}
-            <div className="hidden md:block absolute top-16 left-[15%] right-[15%] h-[1px] bg-[#3b2c24]/20 -z-10"></div>
-
             {/* Step 1 */}
             <div className="w-full md:w-1/3 flex flex-col items-center relative bg-[#fcfaf8]">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-b from-[#fbb693] to-[#fac8b2] flex items-center justify-center mb-6 shadow-sm">
-                <div className="w-16 h-16 rounded-full bg-[#824A2F] flex items-center justify-center text-white">
-                  <MessageSquare className="w-7 h-7" strokeWidth={1.5} />
-                </div>
-              </div>
               <h3 className="text-2xl font-medium tracking-tight text-[#824A2F] mb-4">Triagem Inicial</h3>
               <p className="text-base text-[#3b2c24] leading-relaxed max-w-[260px]">
                 Entre em contacto via WhatsApp. A nossa equipa fará uma breve triagem para entender as suas necessidades e apresentar o valor do tratamento mais indicado para si.
@@ -373,11 +365,6 @@ const LandingPage = () => {
 
             {/* Step 2 */}
             <div className="w-full md:w-1/3 flex flex-col items-center relative bg-[#fcfaf8]">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-b from-[#fbb693] to-[#fac8b2] flex items-center justify-center mb-6 shadow-sm">
-                <div className="w-16 h-16 rounded-full bg-[#824A2F] flex items-center justify-center text-white">
-                  <ScanFace className="w-7 h-7" strokeWidth={1.5} />
-                </div>
-              </div>
               <h3 className="text-2xl font-medium tracking-tight text-[#824A2F] mb-4">Consulta Médica</h3>
               <p className="text-base text-[#3b2c24] leading-relaxed max-w-[260px]">
                 Agende a sua consulta com a nossa equipa médica especializada para elaborar um plano de tratamento personalizado.
@@ -386,11 +373,6 @@ const LandingPage = () => {
 
             {/* Step 3 */}
             <div className="w-full md:w-1/3 flex flex-col items-center relative bg-[#fcfaf8]">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-b from-[#fbb693] to-[#fac8b2] flex items-center justify-center mb-6 shadow-sm">
-                <div className="w-16 h-16 rounded-full bg-[#824A2F] flex items-center justify-center text-white">
-                  <Star className="w-7 h-7" strokeWidth={1.5} />
-                </div>
-              </div>
               <h3 className="text-2xl font-medium tracking-tight text-[#824A2F] mb-4">Tratamento & Cuidado</h3>
               <p className="text-base text-[#3b2c24] leading-relaxed max-w-[260px]">
                 Realização do procedimento com máximo conforto, segurança e foco em resultados naturais.
@@ -403,115 +385,13 @@ const LandingPage = () => {
           </a>
         </section>
 
-        {/* Stats Section */}
-        <section className="bg-[#824A2F] py-16 w-full">
-          <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/20">
-            <div className="text-center px-4">
-              <div className="text-5xl md:text-6xl font-medium tracking-tight text-white mb-2">10+</div>
-              <div className="text-base text-white/90">Anos de experiência da Dra.<br />Rita Sêco</div>
-            </div>
-            <div className="text-center px-4">
-              <div className="text-5xl md:text-6xl font-medium tracking-tight text-white mb-2">3</div>
-              <div className="text-base text-white/90">Anos de clínica no coração<br />do Porto</div>
-            </div>
-            <div className="text-center px-4">
-              <div className="text-5xl md:text-6xl font-medium tracking-tight text-white mb-2">100%</div>
-              <div className="text-base text-white/90">Taxa de fixação de clientes<br />em tratamento</div>
-            </div>
-            <div className="text-center px-4">
-              <div className="text-5xl md:text-6xl font-medium tracking-tight text-white mb-2">+</div>
-              <div className="text-base text-white/90">Centenas de clientes<br />fidelizados</div>
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonials Section */}
-        <section id="resultados" className="py-24 max-w-6xl mx-auto px-6 flex flex-col items-center">
-          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] text-center mb-4">
-            O que as <span className="font-serif italic text-[#824A2F]">nossas clientes</span> dizem
-          </h2>
-          <p className="text-lg text-[#3b2c24] text-center mb-16 max-w-md">
-            A nossa maior recompensa é a confiança e a satisfação de quem nos escolhe
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-            {/* Card 1 */}
-            <div className="bg-[#f3e4d5] rounded-[2rem] p-8 flex flex-col shadow-sm">
-              <div className="flex gap-1 text-[#3b2c24] mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5" strokeWidth={1.5} fill="currentColor" />
-                ))}
-              </div>
-              <p className="text-lg text-[#3b2c24] leading-relaxed mb-8 flex-grow">
-                "Depois de anos à procura de uma clínica em Porto que realmente entendesse o que eu queria, encontrei a Galerie. Fiz Botox com a Dra. Leonor e o resultado é tão natural que ninguém percebeu, só que estou com um aspeto mais descansado e feliz. Confio plenamente!"
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#4a72b0] text-white flex items-center justify-center text-xl font-medium">
-                  A
-                </div>
-                <div>
-                  <p className="text-base font-medium text-[#3b2c24] flex items-center gap-1">
-                    Ana Rodrigues <BadgeCheck className="w-4 h-4 text-blue-500" strokeWidth={2} fill="currentColor" stroke="white" />
-                  </p>
-                  <p className="text-sm text-[#3b2c24]/70">Empresária, Porto</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-[#f3e4d5] rounded-[2rem] p-8 flex flex-col shadow-sm">
-              <div className="flex gap-1 text-[#3b2c24] mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5" strokeWidth={1.5} fill="currentColor" />
-                ))}
-              </div>
-              <p className="text-lg text-[#3b2c24] leading-relaxed mb-8 flex-grow">
-                "A minha maior preocupação era ficar com os lábios exagerados. A equipa da Galerie Clinic fez um trabalho incrível com preenchimento labial, ficou super subtil e natural. Sinto-me muito mais confiante e bonita. Recomendo a 100%!"
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#824A2F] text-white flex items-center justify-center text-xl font-medium">
-                  S
-                </div>
-                <div>
-                  <p className="text-base font-medium text-[#3b2c24] flex items-center gap-1">
-                    Sofia Mendes <BadgeCheck className="w-4 h-4 text-blue-500" strokeWidth={2} fill="currentColor" stroke="white" />
-                  </p>
-                  <p className="text-sm text-[#3b2c24]/70">Advogada, Braga</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-[#f3e4d5] rounded-[2rem] p-8 flex flex-col shadow-sm">
-              <div className="flex gap-1 text-[#3b2c24] mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5" strokeWidth={1.5} fill="currentColor" />
-                ))}
-              </div>
-              <p className="text-lg text-[#3b2c24] leading-relaxed mb-8 flex-grow">
-                "Sofria com a queda de cabelo e o PRP Capilar na Galerie com a Enfermeira Jéssica mudou a minha vida. Os resultados são visíveis, o meu cabelo está mais forte e denso. A honestidade e o cuidado da equipa são impressionantes."
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#82533a] text-white flex items-center justify-center text-xl font-medium">
-                  F
-                </div>
-                <div>
-                  <p className="text-base font-medium text-[#3b2c24] flex items-center gap-1">
-                    Filipa Gomes <BadgeCheck className="w-4 h-4 text-blue-500" strokeWidth={2} fill="currentColor" stroke="white" />
-                  </p>
-                  <p className="text-sm text-[#3b2c24]/70">Designer, Guimarães</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         <VideoCarousel />
 
         {/* Section: FAQ */}
         <section className="py-24 max-w-4xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] text-center mb-16">
-            Perguntas <span className="font-serif italic text-[#824A2F]">Frequentes</span>
+            Perguntas Frequentes
           </h2>
           
           <div className="space-y-4">
@@ -541,7 +421,7 @@ const LandingPage = () => {
         <section id="contacte-nos" className="bg-[#714b38] py-24 px-6 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-white mb-6 leading-tight">
-              Pronta para realçar a sua<br />beleza de forma <span className="font-serif italic">autêntica<br />e segura?</span>
+              Pronta para realçar a sua<br />beleza de forma autêntica e segura?
             </h2>
             <p className="text-xl text-white/90 mb-10 font-medium">
               O seu caminho para uma beleza natural e duradoura começa agora. A nossa equipa aguarda para oferecer-lhe uma experiência única.
