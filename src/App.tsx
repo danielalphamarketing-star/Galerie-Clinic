@@ -205,7 +205,7 @@ const ContactForm = () => {
     const formData = new FormData(e.currentTarget);
     // WEB3FORMS Configuration
     formData.append("access_key", "YOUR_ACCESS_KEY_HERE"); // User needs to replace this
-    formData.append("subject", "Novo lead \"Galerie Clinic\"");
+    formData.append("subject", "Novo Contacto Recebido – Galerie Clinic");
     formData.append("from_name", "Landing Page Leads");
     
     // Multiple recipients requirement: We'll add them to the subject or message 
