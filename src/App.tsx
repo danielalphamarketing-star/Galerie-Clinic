@@ -193,6 +193,69 @@ const ResultadosSection = () => {
 };
 
 const ContactForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
+
+    const formData = new FormData(e.currentTarget);
+    // WEB3FORMS Configuration
+    formData.append("access_key", "YOUR_ACCESS_KEY_HERE"); // User needs to replace this
+    formData.append("subject", "Novo lead \"Galerie Clinic\"");
+    formData.append("from_name", "Landing Page Leads");
+    
+    // Multiple recipients requirement: We'll add them to the subject or message 
+    // note: Web3Forms free usually sends to one registered email. 
+    // Pro allows multiple. I'll add a note for the user.
+    formData.append("note", "Enviar também para: geral@galerieclinic.com e alpha.clientesleads@gmail.com");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSuccess(true);
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setError("Ocorreu um problema ao enviar a sua mensagem. Por favor, tente novamente.");
+      }
+    } catch (err) {
+      setError("Não foi possível estabelecer ligação. Por favor, verifique a sua internet ou contacte-nos via WhatsApp.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  if (isSuccess) {
+    return (
+      <section id="contacto" className="py-24 bg-white">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <div className="w-20 h-20 bg-[#f3e4d5] rounded-full flex items-center justify-center mx-auto mb-8">
+            <BadgeCheck className="w-12 h-12 text-[#824A2F]" />
+          </div>
+          <h2 className="text-4xl font-medium text-[#3b2c24] mb-4">Mensagem Enviada!</h2>
+          <p className="text-lg text-[#3b2c24]/80 mb-8">
+            Obrigado pelo seu contacto. A nossa equipa irá responder-lhe com a maior brevidade possível.
+          </p>
+          <button 
+            onClick={() => setIsSuccess(false)}
+            className="text-[#824A2F] font-medium hover:underline"
+          >
+            Enviar outra mensagem
+          </button>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="contacto" className="py-24 bg-white">
       <div className="max-w-3xl mx-auto px-6">
@@ -205,12 +268,14 @@ const ContactForm = () => {
           </p>
         </div>
 
-        <form className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex flex-col gap-2">
               <label htmlFor="nome" className="text-sm font-medium text-[#3b2c24]/70 ml-1">Nome</label>
               <input 
+                required
                 type="text" 
+                name="nome"
                 id="nome"
                 className="w-full px-6 py-4 rounded-2xl bg-[#fcf9f5] border border-[#3b2c24]/10 focus:outline-none focus:border-[#824A2F]/30 transition-colors"
                 placeholder="O seu nome completo"
@@ -219,7 +284,9 @@ const ContactForm = () => {
             <div className="flex flex-col gap-2">
               <label htmlFor="email" className="text-sm font-medium text-[#3b2c24]/70 ml-1">E-mail</label>
               <input 
+                required
                 type="email" 
+                name="email"
                 id="email"
                 className="w-full px-6 py-4 rounded-2xl bg-[#fcf9f5] border border-[#3b2c24]/10 focus:outline-none focus:border-[#824A2F]/30 transition-colors"
                 placeholder="seu@email.com"
@@ -231,7 +298,9 @@ const ContactForm = () => {
             <div className="flex flex-col gap-2">
               <label htmlFor="telefone" className="text-sm font-medium text-[#3b2c24]/70 ml-1">Telemóvel / Contacto</label>
               <input 
+                required
                 type="tel" 
+                name="telefone"
                 id="telefone"
                 className="w-full px-6 py-4 rounded-2xl bg-[#fcf9f5] border border-[#3b2c24]/10 focus:outline-none focus:border-[#824A2F]/30 transition-colors"
                 placeholder="+351 --- --- ---"
@@ -240,6 +309,8 @@ const ContactForm = () => {
             <div className="flex flex-col gap-2">
               <label htmlFor="procedimento" className="text-sm font-medium text-[#3b2c24]/70 ml-1">Em que procedimento está interessado?</label>
               <select 
+                required
+                name="procedimento"
                 id="procedimento"
                 className="w-full px-6 py-4 rounded-2xl bg-[#fcf9f5] border border-[#3b2c24]/10 focus:outline-none focus:border-[#824A2F]/30 transition-colors appearance-none"
               >
@@ -255,6 +326,8 @@ const ContactForm = () => {
           <div className="flex flex-col gap-2">
             <label htmlFor="mensagem" className="text-sm font-medium text-[#3b2c24]/70 ml-1">Como podemos ajudar?</label>
             <textarea 
+              required
+              name="mensagem"
               id="mensagem"
               rows={4}
               className="w-full px-6 py-4 rounded-2xl bg-[#fcf9f5] border border-[#3b2c24]/10 focus:outline-none focus:border-[#824A2F]/30 transition-colors resize-none"
@@ -262,11 +335,21 @@ const ContactForm = () => {
             ></textarea>
           </div>
 
+          {error && (
+            <p className="text-red-500 text-sm ml-1 bg-red-50 p-3 rounded-xl border border-red-100">{error}</p>
+          )}
+
           <button 
             type="submit"
-            className="w-full py-5 bg-[#824A2F] text-white rounded-full text-lg font-medium hover:bg-[#6b3d27] transition-all transform hover:scale-[1.01] active:scale-[0.99] shadow-lg"
+            disabled={isSubmitting}
+            className={`w-full py-5 bg-[#824A2F] text-white rounded-full text-lg font-medium transition-all transform hover:scale-[1.01] active:scale-[0.99] shadow-lg flex items-center justify-center gap-3 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#6b3d27]'}`}
           >
-            Enviar Mensagem
+            {isSubmitting ? (
+              <>
+                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                Enviando...
+              </>
+            ) : 'Enviar Mensagem'}
           </button>
         </form>
       </div>
