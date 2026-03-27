@@ -192,6 +192,46 @@ const ResultadosSection = () => {
   );
 };
 
+const ClinicGallery = () => {
+  const images = [
+    '/assets/clinic/clinic_1.jpg', '/assets/clinic/clinic_2.jpg', '/assets/clinic/clinic_3.jpg',
+    '/assets/clinic/clinic_4.jpg', '/assets/clinic/clinic_5.jpg', '/assets/clinic/clinic_6.jpg',
+    '/assets/clinic/clinic_7.jpg', '/assets/clinic/clinic_8.jpg', '/assets/clinic/clinic_9.jpg',
+    '/assets/clinic/clinic_10.jpg', '/assets/clinic/clinic_11.jpg', '/assets/clinic/clinic_12.jpg'
+  ];
+
+  return (
+    <section id="clinica" className="py-24 bg-[#fcf9f5]">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] mb-4">
+            Conheçam melhor a nossa clínica
+          </h2>
+          <p className="text-lg text-[#3b2c24]/80 max-w-2xl mx-auto">
+            Um espaço pensado para o seu bem-estar, com tecnologia de ponta e uma equipa dedicada a si.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          {images.map((img, i) => (
+            <div 
+              key={i} 
+              className="group relative aspect-[4/5] rounded-[2rem] overflow-hidden bg-slate-100 transition-all duration-500 hover:shadow-2xl"
+            >
+              <img 
+                src={img} 
+                alt={`Galerie Clinic - Instalações ${i + 1}`} 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -622,6 +662,9 @@ const LandingPage = () => {
           </a>
         </section>
 
+
+        {/* Section: Clinical Gallery */}
+        <ClinicGallery />
 
 
         {/* Section: FAQ */}
