@@ -239,10 +239,10 @@ const LandingPage = () => {
                 A sua beleza merece ser celebrada, não desfigurada por exageros ou promessas vazias.
               </p>
               <p>
-                Na Galerie Clinic, em Porto, a nossa equipa de especialistas, supervisionada pela Dra. Rita Sêco, oferece uma medicina estética focada em resultados naturais e duradouros.
+                Na Galerie Clinic, em Porto, a nossa equipa de especialistas, supervisionada pela Dra. Rita Sêco, oferece uma medicina estética focada em resultados naturais e seguros.
               </p>
               <p>
-                Defendemos a individualidade e recusamos qualquer procedimento que prometa o impossível. Acreditamos na verdade, na ciência e em resultados que fazem a sua beleza florescer naturalmente, sem artifícios.
+                Defendemos a individualidade e recusamos qualquer procedimento que prometa o impossível. Acreditamos na verdade, na ciência e em resultados visíveis ao longo do tempo. A segurança dos procedimentos e a saúde da sua pele são a nossa prioridade.
               </p>
             </div>
           </div>
