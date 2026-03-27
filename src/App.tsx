@@ -544,7 +544,7 @@ const LandingPage = () => {
               Pronta para realçar a sua<br />beleza de forma <span className="font-serif italic">autêntica<br />e segura?</span>
             </h2>
             <p className="text-xl text-white/90 mb-10 font-medium">
-              A sua jornada para uma beleza natural e duradoura começa agora. A nossa equipa aguarda para oferecer-lhe uma experiência única.
+              O seu caminho para uma beleza natural e duradoura começa agora. A nossa equipa aguarda para oferecer-lhe uma experiência única.
             </p>
             <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 text-lg text-[#3b2c24] bg-[#fbb693] rounded-full hover:bg-[#fac8b2] transition-colors font-medium">
               Agendar Avaliação
