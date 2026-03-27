@@ -159,14 +159,11 @@ const ResultadosSection = () => {
   const allResults = [...results, ...results];
 
   return (
-    <section id="resultados" className="py-24 bg-[#fcf9f5] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-        <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] mb-4">
-          Resultados que Inspiram
+    <section id="resultados" className="pb-24 pt-12 bg-[#fcf9f5] overflow-hidden border-t border-[#3b2c24]/5">
+      <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
+        <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24]">
+          Antes & Depois de nossos paciente.
         </h2>
-        <p className="text-lg text-[#3b2c24]/80 max-w-2xl mx-auto">
-          Realce a sua beleza natural com o acompanhamento da nossa equipa.
-        </p>
       </div>
 
       <div className="relative flex">
@@ -283,15 +280,17 @@ const LandingPage = () => {
         <ResultadosSection />
 
 
-        {/* Section: Sente que os sinais... */}
-        <section className="py-24 max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16 md:gap-24">
-          <div className="w-full md:w-5/12 relative">
-            <div className="rounded-tr-[5rem] rounded-bl-[5rem] rounded-tl-3xl rounded-br-3xl overflow-hidden aspect-square">
-              <img src="/assets/aging_essence.png" alt="Resultados Naturais" className="object-cover w-full h-full" />
-            </div>
-            
-            {/* Floating Badge */}
-            <div className="absolute -top-6 -right-6 md:-top-10 md:-right-10 z-20 w-32 h-32 bg-[#82533a] rounded-full flex items-center justify-center p-2 shadow-lg">
+        {/* Section: About - Redesigned to split screen */}
+        <section className="relative w-full flex flex-col md:flex-row min-h-[600px] overflow-hidden">
+          {/* Left Side: Image */}
+          <div className="w-full md:w-1/2 relative h-[400px] md:h-auto">
+            <img 
+              src="/assets/PRF00474.jpg" 
+              alt="Galerie Clinic - A nossa essência" 
+              className="absolute inset-0 w-full h-full object-cover object-top"
+            />
+            {/* Overlay Badge from previous design if needed, but mockup doesn't have it */}
+            <div className="absolute top-8 left-8 z-20 w-32 h-32 bg-[#82533a] rounded-full hidden md:flex items-center justify-center p-2 shadow-lg scale-75 origin-top-left">
               <svg viewBox="0 0 100 100" className="w-full h-full animate-[spin_20s_linear_infinite]">
                 <path d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" id="circle-text" fill="none" />
                 <text className="text-[11px] font-medium tracking-widest text-white uppercase">
@@ -302,12 +301,13 @@ const LandingPage = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-7/12">
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#333333] mb-6 leading-[1.1]">
+          {/* Right Side: Brown Content */}
+          <div className="w-full md:w-1/2 bg-[#824A2F] p-12 md:p-24 flex flex-col justify-center">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-white mb-8 leading-[1.15]">
               Onde a ciência e a elegância se encontram para preservar a sua essência.
             </h2>
-            <div className="space-y-4 text-lg text-[#3b2c24] leading-relaxed">
-              <p>
+            <div className="space-y-6 text-lg md:text-xl text-white/90 leading-relaxed font-light">
+              <p className="font-medium text-white">
                 A sua beleza merece ser celebrada, não desfigurada por exageros ou promessas vazias.
               </p>
               <p>
