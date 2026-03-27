@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+﻿import React, { useState, useRef, useEffect } from 'react';
 import { Menu, MessageSquare, ScanFace, Star, BadgeCheck, ChevronDown, Instagram, Facebook, Volume2, VolumeX } from 'lucide-react';
 import { motion, useInView } from 'motion/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -22,16 +22,16 @@ const VIDEO_SOURCES = [
 
 const FAQ_ITEMS = [
   {
-    question: 'Os tratamentos são muito caros na Galerie Clinic?',
-    answer: 'Os nossos valores refletem a qualidade, segurança e ética dos procedimentos que realizamos. Fazemos sempre triagem de valores por telefone antes da consulta, para que venha totalmente informada e sem surpresas.',
+    question: 'Os tratamentos s├úo muito caros na Galerie Clinic?',
+    answer: 'Os nossos valores refletem a qualidade, seguran├ºa e ├®tica dos procedimentos que realizamos. Fazemos sempre triagem de valores por telefone antes da consulta, para que venha totalmente informada e sem surpresas.',
   },
   {
-    question: 'Tenho receio de injetáveis. Os procedimentos são seguros?',
-    answer: 'Absolutamente. A nossa equipa é formada e supervisionada pela Dra. Rita Sêco, e nunca realizamos qualquer procedimento sem antes explicar cada detalhe. Começamos sempre de forma gradual e segura, respeitando o seu ritmo.',
+    question: 'Tenho receio de injet├íveis. Os procedimentos s├úo seguros?',
+    answer: 'Absolutamente. A nossa equipa ├® formada e supervisionada pela Dra. Rita S├¬co, e nunca realizamos qualquer procedimento sem antes explicar cada detalhe. Come├ºamos sempre de forma gradual e segura, respeitando o seu ritmo.',
   },
   {
-    question: 'Qual o tempo de duração dos resultados?',
-    answer: 'Depende do tratamento. O Botox tem duração de 4 a 6 meses, os preenchimentos de 12 a 18 meses e os bioestimuladores de colagénio têm efeito progressivo e duradouro. Em consulta, traçamos um plano personalizado para si.',
+    question: 'Qual o tempo de dura├º├úo dos resultados?',
+    answer: 'Depende do tratamento. O Botox tem dura├º├úo de 4 a 6 meses, os preenchimentos de 12 a 18 meses e os bioestimuladores de colag├®nio t├¬m efeito progressivo e duradouro. Em consulta, tra├ºamos um plano personalizado para si.',
   },
 ];
 
@@ -188,14 +188,14 @@ const LandingPage = () => {
         <section className="max-w-7xl mx-auto px-6 pt-12 pb-24 flex flex-col md:flex-row items-center gap-12 md:gap-16">
           <div className="w-full md:w-1/2">
             <h1 className="text-5xl md:text-[3.5rem] font-medium tracking-tight text-[#333333] leading-[1.1] mb-6">
-              A excelência da medicina estética, refletida na sua <span className="font-serif italic text-[#824A2F]">naturalidade.</span>
+              A excel├¬ncia da medicina est├®tica, refletida na sua <span className="font-serif italic text-[#824A2F]">naturalidade.</span>
             </h1>
             <p className="text-lg text-[#3b2c24] mb-10 leading-relaxed max-w-lg">
-              Na Galerie Clinic, cada detalhe é pensado para revelar a sua melhor versão com tratamentos modernos, atendimento humanizado e resultados que encantam.
+              Na Galerie Clinic, cada detalhe ├® pensado para revelar a sua melhor vers├úo com tratamentos modernos, atendimento humanizado e resultados que encantam.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3.5 text-lg text-white bg-[#82533a] rounded-full hover:bg-[#6e4631] transition-colors">
-                Agendar Avaliação
+                Agendar Avalia├º├úo
               </a>
               <a href="#tratamentos" className="inline-flex items-center justify-center px-8 py-3.5 text-lg text-[#3b2c24] bg-[#b9b2a7] rounded-full hover:bg-[#a59e94] transition-colors">
                 Ver tratamentos
@@ -223,7 +223,7 @@ const LandingPage = () => {
               <svg viewBox="0 0 100 100" className="w-full h-full animate-[spin_20s_linear_infinite]">
                 <path d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" id="circle-text" fill="none" />
                 <text className="text-[11px] font-medium tracking-widest text-white uppercase">
-                  <textPath href="#circle-text" startOffset="0%">Galerie Clinic Estética • </textPath>
+                  <textPath href="#circle-text" startOffset="0%">Galerie Clinic Est├®tica ÔÇó </textPath>
                 </text>
               </svg>
               <span className="absolute text-3xl font-serif text-white">G</span>
@@ -232,17 +232,17 @@ const LandingPage = () => {
 
           <div className="w-full md:w-7/12">
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#333333] mb-6 leading-[1.1]">
-              Onde a ciência e a elegância se encontram para <span className="font-serif italic text-[#824A2F]">preservar</span> a sua essência.
+              Onde a ci├¬ncia e a eleg├óncia se encontram para <span className="font-serif italic text-[#824A2F]">preservar</span> a sua ess├¬ncia.
             </h2>
             <div className="space-y-4 text-lg text-[#3b2c24] leading-relaxed">
               <p>
-                A sua beleza merece ser celebrada, não desfigurada por exageros ou promessas vazias.
+                A sua beleza merece ser celebrada, n├úo desfigurada por exageros ou promessas vazias.
               </p>
               <p>
-                Na Galerie Clinic, em Porto, a nossa equipa de especialistas, supervisionada pela Dra. Rita Sêco, oferece uma medicina estética focada em resultados naturais e duradouros.
+                Na Galerie Clinic, em Porto, a nossa equipa de especialistas, supervisionada pela Dra. Rita S├¬co, oferece uma medicina est├®tica focada em resultados naturais e duradouros.
               </p>
               <p>
-                Defendemos a individualidade e recusamos qualquer procedimento que prometa o impossível. Acreditamos na verdade, na ciência e em resultados que fazem a sua beleza florescer naturalmente, sem artifícios.
+                Defendemos a individualidade e recusamos qualquer procedimento que prometa o imposs├¡vel. Acreditamos na verdade, na ci├¬ncia e em resultados que fazem a sua beleza florescer naturalmente, sem artif├¡cios.
               </p>
             </div>
           </div>
@@ -252,7 +252,7 @@ const LandingPage = () => {
         <section id="tratamentos" className="py-24 max-w-6xl mx-auto px-6 flex flex-col items-center">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] text-center mb-16">
             As nossas especialidades<br />
-            em <span className="font-serif italic text-[#824A2F]">Medicina Estética.</span>
+            em <span className="font-serif italic text-[#824A2F]">Medicina Est├®tica.</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
@@ -260,13 +260,13 @@ const LandingPage = () => {
             {/* Botox (Wide) */}
             <div className="md:col-span-2 bg-[#c69d7b] rounded-[3rem] overflow-hidden flex flex-col md:flex-row relative min-h-[300px]">
               <div className="p-8 md:p-12 md:w-1/2 flex flex-col justify-center z-10">
-                <h3 className="text-2xl font-medium tracking-tight text-white mb-4">Botox (Toxina<br />Botulínica)</h3>
+                <h3 className="text-2xl font-medium tracking-tight text-white mb-4">Botox (Toxina<br />Botul├¡nica)</h3>
                 <p className="text-base text-white/90 mb-6 leading-relaxed">
-                  Suavize rugas de expressão e previna o envelhecimento. Aplicação precisa para um aspeto mais jovem e relaxado, mantendo a naturalidade e a expressividade da sua face.
+                  Suavize rugas de express├úo e previna o envelhecimento. Aplica├º├úo precisa para um aspeto mais jovem e relaxado, mantendo a naturalidade e a expressividade da sua face.
                 </p>
                 <div>
                   <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 text-base text-white bg-[#824A2F] rounded-full hover:bg-[#6b3d27] transition-colors">
-                    Agendar Avaliação
+                    Agendar Avalia├º├úo
                   </a>
                 </div>
               </div>
@@ -282,7 +282,7 @@ const LandingPage = () => {
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Preenchimento Labial</h3>
                 <p className="text-base text-white/90 leading-relaxed">
-                  Realce os seus lábios com volume e contorno harmoniosos, sem exageros.
+                  Realce os seus l├íbios com volume e contorno harmoniosos, sem exageros.
                 </p>
               </div>
             </div>
@@ -292,9 +292,9 @@ const LandingPage = () => {
               <img src="/assets/specialty_bioestimuladores.png" alt="Bioestimuladores" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
-                <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Bioestimuladores<br />de Colagénio</h3>
+                <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Bioestimuladores<br />de Colag├®nio</h3>
                 <p className="text-base text-white/90 leading-relaxed">
-                  Melhore a flacidez e a qualidade da pele estimulando a sua produção natural.
+                  Melhore a flacidez e a qualidade da pele estimulando a sua produ├º├úo natural.
                 </p>
               </div>
             </div>
@@ -318,7 +318,7 @@ const LandingPage = () => {
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">PRP<br />Capilar</h3>
                 <p className="text-base text-white/90 leading-relaxed">
-                  Combata a queda e melhore a densidade capilar com o seu próprio plasma.
+                  Combata a queda e melhore a densidade capilar com o seu pr├│prio plasma.
                 </p>
               </div>
             </div>
@@ -326,18 +326,18 @@ const LandingPage = () => {
             {/* Vitaminas (Wide) */}
             <div className="md:col-span-3 bg-[#82533a] rounded-[3rem] overflow-hidden flex flex-col md:flex-row relative min-h-[300px]">
               <div className="p-8 md:p-12 md:w-1/2 flex flex-col justify-center z-10">
-                <h3 className="text-2xl font-medium tracking-tight text-white mb-4">Vitaminas e Nutrição Dérmica</h3>
+                <h3 className="text-2xl font-medium tracking-tight text-white mb-4">Vitaminas e Nutri├º├úo D├®rmica</h3>
                 <p className="text-base text-white/90 mb-6 leading-relaxed">
-                  Infusão de vitaminas e nutrientes essenciais diretamente na pele para hidratação profunda, luminosidade e proteção antioxidante.
+                  Infus├úo de vitaminas e nutrientes essenciais diretamente na pele para hidrata├º├úo profunda, luminosidade e prote├º├úo antioxidante.
                 </p>
                 <div>
                   <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 text-base text-white bg-[#824A2F] rounded-full hover:bg-[#6b3d27] transition-colors">
-                    Agendar Avaliação
+                    Agendar Avalia├º├úo
                   </a>
                 </div>
               </div>
               <div className="h-56 md:h-auto md:w-1/2">
-                <img src="/assets/specialty_vitaminas.png" alt="Nutrição Dérmica" className="w-full h-full object-cover" />
+                <img src="/assets/specialty_vitaminas.png" alt="Nutri├º├úo D├®rmica" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -348,10 +348,10 @@ const LandingPage = () => {
         {/* Section: Como funciona a sua jornada */}
         <section id="como-funcionamos" className="py-24 max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#333333] mb-4">
-            Como funciona o <span className="font-serif italic text-[#824A2F]">seu acompanhamento</span> connosco?
+            Como funciona a <span className="font-serif italic text-[#824A2F]">sua jornada</span> connosco?
           </h2>
           <p className="text-lg text-[#3b2c24] mb-20 max-w-2xl">
-            um processo simples, transparente e focado em si, desde o primeiro contacto.
+            Um processo simples, transparente e focado em si, desde o primeiro contacto at├® ao acompanhamento final.
           </p>
 
           <div className="relative w-full flex flex-col md:flex-row justify-between items-start mb-16 gap-12 md:gap-0">
@@ -367,7 +367,7 @@ const LandingPage = () => {
               </div>
               <h3 className="text-2xl font-medium tracking-tight text-[#824A2F] mb-4">Triagem Inicial</h3>
               <p className="text-base text-[#3b2c24] leading-relaxed max-w-[260px]">
-                Entre em contacto via WhatsApp. A nossa equipa fará uma breve triagem para entender as suas necessidades e apresentar o valor do tratamento mais indicado para si.
+                Entre em contacto via WhatsApp. A nossa equipa far├í uma breve triagem para entender as suas necessidades e apresentar os valores.
               </p>
             </div>
 
@@ -378,9 +378,9 @@ const LandingPage = () => {
                   <ScanFace className="w-7 h-7" strokeWidth={1.5} />
                 </div>
               </div>
-              <h3 className="text-2xl font-medium tracking-tight text-[#824A2F] mb-4">Consulta Médica</h3>
+              <h3 className="text-2xl font-medium tracking-tight text-[#824A2F] mb-4">Consulta M├®dica</h3>
               <p className="text-base text-[#3b2c24] leading-relaxed max-w-[260px]">
-                Agende a sua consulta com a nossa equipa médica especializada para elaborar um plano de tratamento personalizado.
+                Agende a sua consulta com a nossa equipa m├®dica especializada para elaborar um plano de tratamento personalizado. O valor ├® descontado no procedimento.
               </p>
             </div>
 
@@ -393,7 +393,7 @@ const LandingPage = () => {
               </div>
               <h3 className="text-2xl font-medium tracking-tight text-[#824A2F] mb-4">Tratamento & Cuidado</h3>
               <p className="text-base text-[#3b2c24] leading-relaxed max-w-[260px]">
-                Realização do procedimento com máximo conforto, segurança e foco em resultados naturais.
+                Realiza├º├úo do procedimento com m├íximo conforto, seguran├ºa e foco em resultados naturais, seguido de acompanhamento pr├│ximo.
               </p>
             </div>
           </div>
@@ -408,15 +408,15 @@ const LandingPage = () => {
           <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/20">
             <div className="text-center px-4">
               <div className="text-5xl md:text-6xl font-medium tracking-tight text-white mb-2">10+</div>
-              <div className="text-base text-white/90">Anos de experiência da Dra.<br />Rita Sêco</div>
+              <div className="text-base text-white/90">Anos de experi├¬ncia da Dra.<br />Rita S├¬co</div>
             </div>
             <div className="text-center px-4">
               <div className="text-5xl md:text-6xl font-medium tracking-tight text-white mb-2">3</div>
-              <div className="text-base text-white/90">Anos de clínica no coração<br />do Porto</div>
+              <div className="text-base text-white/90">Anos de cl├¡nica no cora├º├úo<br />do Porto</div>
             </div>
             <div className="text-center px-4">
               <div className="text-5xl md:text-6xl font-medium tracking-tight text-white mb-2">100%</div>
-              <div className="text-base text-white/90">Taxa de fixação de clientes<br />em tratamento</div>
+              <div className="text-base text-white/90">Taxa de fixa├º├úo de clientes<br />em tratamento</div>
             </div>
             <div className="text-center px-4">
               <div className="text-5xl md:text-6xl font-medium tracking-tight text-white mb-2">+</div>
@@ -431,7 +431,7 @@ const LandingPage = () => {
             O que as <span className="font-serif italic text-[#824A2F]">nossas clientes</span> dizem
           </h2>
           <p className="text-lg text-[#3b2c24] text-center mb-16 max-w-md">
-            A nossa maior recompensa é a confiança e a satisfação de quem nos escolhe
+            A nossa maior recompensa ├® a confian├ºa e a satisfa├º├úo de quem nos escolhe
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
@@ -443,7 +443,7 @@ const LandingPage = () => {
                 ))}
               </div>
               <p className="text-lg text-[#3b2c24] leading-relaxed mb-8 flex-grow">
-                "Depois de anos à procura de uma clínica em Porto que realmente entendesse o que eu queria, encontrei a Galerie. Fiz Botox com a Dra. Leonor e o resultado é tão natural que ninguém percebeu, só que estou com um aspeto mais descansado e feliz. Confio plenamente!"
+                "Depois de anos ├á procura de uma cl├¡nica em Porto que realmente entendesse o que eu queria, encontrei a Galerie. Fiz Botox com a Dra. Leonor e o resultado ├® t├úo natural que ningu├®m percebeu, s├│ que estou com um aspeto mais descansado e feliz. Confio plenamente!"
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-[#4a72b0] text-white flex items-center justify-center text-xl font-medium">
@@ -453,7 +453,7 @@ const LandingPage = () => {
                   <p className="text-base font-medium text-[#3b2c24] flex items-center gap-1">
                     Ana Rodrigues <BadgeCheck className="w-4 h-4 text-blue-500" strokeWidth={2} fill="currentColor" stroke="white" />
                   </p>
-                  <p className="text-sm text-[#3b2c24]/70">Empresária, Porto</p>
+                  <p className="text-sm text-[#3b2c24]/70">Empres├íria, Porto</p>
                 </div>
               </div>
             </div>
@@ -466,7 +466,7 @@ const LandingPage = () => {
                 ))}
               </div>
               <p className="text-lg text-[#3b2c24] leading-relaxed mb-8 flex-grow">
-                "A minha maior preocupação era ficar com os lábios exagerados. A equipa da Galerie Clinic fez um trabalho incrível com preenchimento labial, ficou super subtil e natural. Sinto-me muito mais confiante e bonita. Recomendo a 100%!"
+                "A minha maior preocupa├º├úo era ficar com os l├íbios exagerados. A equipa da Galerie Clinic fez um trabalho incr├¡vel com preenchimento labial, ficou super subtil e natural. Sinto-me muito mais confiante e bonita. Recomendo a 100%!"
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-[#824A2F] text-white flex items-center justify-center text-xl font-medium">
@@ -489,7 +489,7 @@ const LandingPage = () => {
                 ))}
               </div>
               <p className="text-lg text-[#3b2c24] leading-relaxed mb-8 flex-grow">
-                "Sofria com a queda de cabelo e o PRP Capilar na Galerie com a Enfermeira Jéssica mudou a minha vida. Os resultados são visíveis, o meu cabelo está mais forte e denso. A honestidade e o cuidado da equipa são impressionantes."
+                "Sofria com a queda de cabelo e o PRP Capilar na Galerie com a Enfermeira J├®ssica mudou a minha vida. Os resultados s├úo vis├¡veis, o meu cabelo est├í mais forte e denso. A honestidade e o cuidado da equipa s├úo impressionantes."
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-[#82533a] text-white flex items-center justify-center text-xl font-medium">
@@ -499,7 +499,7 @@ const LandingPage = () => {
                   <p className="text-base font-medium text-[#3b2c24] flex items-center gap-1">
                     Filipa Gomes <BadgeCheck className="w-4 h-4 text-blue-500" strokeWidth={2} fill="currentColor" stroke="white" />
                   </p>
-                  <p className="text-sm text-[#3b2c24]/70">Designer, Guimarães</p>
+                  <p className="text-sm text-[#3b2c24]/70">Designer, Guimar├úes</p>
                 </div>
               </div>
             </div>
@@ -541,13 +541,13 @@ const LandingPage = () => {
         <section id="contacte-nos" className="bg-[#714b38] py-24 px-6 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-white mb-6 leading-tight">
-              Pronta para realçar a sua<br />beleza de forma <span className="font-serif italic">autêntica<br />e segura?</span>
+              Pronta para real├ºar a sua<br />beleza de forma <span className="font-serif italic">aut├¬ntica<br />e segura?</span>
             </h2>
             <p className="text-xl text-white/90 mb-10 font-medium">
-              A sua jornada para uma beleza natural e duradoura começa agora. A nossa equipa aguarda para oferecer-lhe uma experiência única.
+              A sua jornada para uma beleza natural e duradoura come├ºa agora. A nossa equipa aguarda para oferecer-lhe uma experi├¬ncia ├║nica.
             </p>
             <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 text-lg text-[#3b2c24] bg-[#fbb693] rounded-full hover:bg-[#fac8b2] transition-colors font-medium">
-              Agendar Avaliação
+              Agendar Avalia├º├úo
             </a>
           </div>
         </section>
@@ -560,7 +560,7 @@ const LandingPage = () => {
           <div className="flex flex-col">
             <span className="text-2xl font-medium tracking-tight uppercase text-[#3b2c24] mb-4">Galerie Clinic</span>
             <p className="text-lg text-[#3b2c24] mb-8 max-w-sm">
-              Medicina estética de confiança no Porto, focada em resultados naturais e na sua individualidade.
+              Medicina est├®tica de confian├ºa no Porto, focada em resultados naturais e na sua individualidade.
             </p>
             <div className="flex gap-3">
               <a href="https://www.instagram.com/galerieclinic/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#82533a] text-white flex items-center justify-center hover:bg-[#6e4631] transition-colors">
@@ -583,12 +583,12 @@ const LandingPage = () => {
           </div>
 
           <div className="flex flex-col">
-            <h4 className="text-xl font-medium text-[#3b2c24] mb-6">Links Úteis</h4>
+            <h4 className="text-xl font-medium text-[#3b2c24] mb-6">Links ├Üteis</h4>
             <div className="flex flex-col gap-3">
               <a href="#tratamentos" className="text-lg text-[#3b2c24] hover:text-[#824A2F] transition-colors">Tratamentos</a>
               <a href="#como-funcionamos" className="text-lg text-[#3b2c24] hover:text-[#824A2F] transition-colors">Como Funcionamos</a>
               <a href="#resultados" className="text-lg text-[#3b2c24] hover:text-[#824A2F] transition-colors">Resultados</a>
-              <a href="#" className="text-lg text-[#3b2c24] hover:text-[#824A2F] transition-colors">Política de Privacidade</a>
+              <a href="#" className="text-lg text-[#3b2c24] hover:text-[#824A2F] transition-colors">Pol├¡tica de Privacidade</a>
             </div>
           </div>
 
@@ -596,7 +596,7 @@ const LandingPage = () => {
 
         <div className="max-w-7xl mx-auto px-6 border-t border-[#3b2c24]/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-base text-[#3b2c24]">
-            © 2026 Galerie Clinic. Todos os direitos reservados.
+            ┬® 2026 Galerie Clinic. Todos os direitos reservados.
           </p>
           <p className="text-base text-[#3b2c24]">
             Site Desenvolvido por <a href="https://marketingalphadigital.com.br/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#eb6625]">Alpha Marketing Digital</a>
