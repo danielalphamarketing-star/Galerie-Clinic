@@ -194,27 +194,27 @@ const ResultadosSection = () => {
 
 const AboutSpaceSection = () => {
   return (
-    <section id="clinica" className="bg-[#ada69a] py-24 px-6 relative overflow-hidden">
+    <section id="clinica" className="bg-[#ada69a] py-32 px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-stretch">
         {/* Left Card: Image */}
         <div 
-          className="w-full md:w-1/2 bg-[#eee9e2] rounded-[50px] overflow-hidden shadow-sm"
+          className="w-full md:w-1/2 bg-[#eee9e2] rounded-[50px] overflow-hidden shadow-sm flex items-center justify-center p-0"
         >
           <img 
-            src="/assets/clinic/clinic_interior_1.jpg" 
+            src="/assets/clinic_interior_1.jpg" 
             alt="Galerie Clinic - O nosso espaço" 
-            className="w-full h-full object-cover min-h-[400px]"
+            className="w-full h-full object-cover min-h-[500px]"
           />
         </div>
 
         {/* Right Card: Text */}
         <div 
-          className="w-full md:w-1/2 bg-[#eee9e2] rounded-[50px] p-12 lg:p-20 flex flex-col justify-center shadow-sm"
+          className="w-full md:w-1/2 bg-[#eee9e2] rounded-[50px] p-12 lg:p-24 flex flex-col justify-center shadow-sm"
         >
-          <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#3b2c24]/60 mb-8 block">
+          <span className="text-xs font-bold tracking-[0.3em] uppercase text-[#3b2c24]/50 mb-8 block">
             A Nossa Clínica
           </span>
-          <h2 className="text-3xl lg:text-5xl font-medium tracking-tight text-[#3b2c24] mb-10 leading-[1.15]">
+          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-medium tracking-tight text-[#3b2c24] mb-12 leading-[1.2]">
             Bem-vinda à Galerie Clinic, onde a beleza se encontra com a inovação no coração da encantadora cidade com vista para o deslumbrante Rio Douro.
           </h2>
           <div className="space-y-8 text-lg lg:text-xl text-[#3b2c24]/80 leading-relaxed font-light">
