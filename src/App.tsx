@@ -146,7 +146,7 @@ const LandingPage = () => {
       {/* Header Navigation */}
       <header className="w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
         <a href="#" className="flex items-center">
-          <span className="text-xl font-medium tracking-tight uppercase">Galerie Clinic</span>
+          <span className="text-xl font-medium tracking-[0.15em] uppercase">GALERIE CLINIC</span>
         </a>
         
         <nav className="hidden md:flex items-center gap-8">
@@ -184,41 +184,40 @@ const LandingPage = () => {
       )}
 
       <main>
-        {/* Hero Section - Redesigned to match screenshot */}
-        <section className="relative w-full h-[85vh] min-h-[600px] overflow-hidden flex items-center justify-center text-center">
-          {/* Background Video */}
+        {/* Hero Section - Redesigned to match mockup exactly */}
+        <section className="relative w-full h-[90vh] min-h-[700px] overflow-hidden flex items-center justify-center text-center">
+          {/* Background Image/Video */}
           <div className="absolute inset-0 z-0">
-            <video
+            <img 
+              src="/assets/hero-bg.png" 
+              alt="Galerie Clinic Background"
               className="w-full h-full object-cover"
-              src="/videos/v9.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
             />
-            {/* Overlay to ensure text readability */}
-            <div className="absolute inset-0 bg-black/45"></div>
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/30"></div>
           </div>
 
           {/* Hero Content */}
           <div className="relative z-10 max-w-4xl px-6 flex flex-col items-center">
-            <span className="text-xl md:text-2xl text-white mb-4 font-medium tracking-wide drop-shadow-sm">Galerie Clinic</span>
-            <h1 className="text-4xl md:text-[3.5rem] font-medium tracking-tight text-white leading-[1.15] mb-8 drop-shadow-md">
-              A excelência da medicina estética,<br className="hidden md:block" />refletida na sua naturalidade.
+            <span className="text-xl md:text-2xl text-white mb-6 font-medium tracking-[0.2em] drop-shadow-sm uppercase">Galerie Clinic</span>
+            <h1 className="text-4xl md:text-[3.8rem] font-medium tracking-tight text-white leading-[1.1] mb-8 drop-shadow-md">
+              A excelência da medicina estética,<br />refletida na sua naturalidade.
             </h1>
-            <p className="text-lg md:text-xl text-white/95 mb-10 leading-relaxed max-w-2xl drop-shadow-sm">
+            <p className="text-lg md:text-xl text-white/95 mb-12 leading-relaxed max-w-2xl drop-shadow-sm">
               Aqui cada detalhe é pensado para revelar a sua melhor versão com tratamentos modernos, atendimento humanizado e resultados que encantam.
             </p>
-            <div className="flex flex-col sm:flex-row gap-5">
-              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 text-lg text-white bg-[#82533a] rounded-full hover:bg-[#6e4631] transition-all transform hover:scale-105 shadow-xl font-medium">
+            <div className="flex flex-col sm:flex-row gap-6">
+              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 text-lg text-white bg-[#82533a] rounded-full hover:bg-[#6e4631] transition-all transform hover:scale-105 shadow-2xl font-medium">
                 Agendar Avaliação
               </a>
-              <a href="#tratamentos" className="inline-flex items-center justify-center px-10 py-4 text-lg text-[#3b2c24] bg-[#fcfaf8] rounded-full hover:bg-white transition-all transform hover:scale-105 shadow-xl font-medium">
+              <a href="#tratamentos" className="inline-flex items-center justify-center px-10 py-4 text-lg text-[#3b2c24] bg-white rounded-full hover:bg-white transition-all transform hover:scale-105 shadow-2xl font-medium">
                 Ver tratamentos
               </a>
             </div>
           </div>
         </section>
+
+        <VideoCarousel />
 
 
         {/* Section: Sente que os sinais... */}
@@ -396,7 +395,6 @@ const LandingPage = () => {
         </section>
 
 
-        <VideoCarousel />
 
         {/* Section: FAQ */}
         <section className="py-24 max-w-4xl mx-auto px-6">
