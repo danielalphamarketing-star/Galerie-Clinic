@@ -31,7 +31,7 @@ const FAQ_ITEMS = [
   },
   {
     question: 'Qual o tempo de duração dos resultados?',
-    answer: 'Depende do tratamento. O Botox tem duração de 4 a 6 meses, os preenchimentos de 12 a 18 meses e os bioestimuladores de colagénio têm efeito progressivo e duradouro. Em consulta, traçamos um plano personalizado para si.',
+    answer: 'Depende do tratamento. O Botox tem duração de 3 a 6 meses, os preenchimentos de 8 a 12 meses e os bioestimuladores de colagénio têm efeito progressivo e duradouro. Em consulta, traçamos um plano personalizado para si.',
   },
 ];
 
