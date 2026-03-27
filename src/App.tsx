@@ -184,28 +184,38 @@ const LandingPage = () => {
       )}
 
       <main>
-        {/* Hero Section */}
-        <section className="max-w-7xl mx-auto px-6 pt-12 pb-24 flex flex-col md:flex-row items-center gap-12 md:gap-16">
-          <div className="w-full md:w-1/2">
-            <h1 className="text-5xl md:text-[3.5rem] font-medium tracking-tight text-[#333333] leading-[1.1] mb-6">
-              A excelência da medicina estética, refletida na sua naturalidade.
+        {/* Hero Section - Redesigned to match screenshot */}
+        <section className="relative w-full h-[85vh] min-h-[600px] overflow-hidden flex items-center justify-center text-center">
+          {/* Background Video */}
+          <div className="absolute inset-0 z-0">
+            <video
+              className="w-full h-full object-cover"
+              src="/videos/v9.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+            {/* Overlay to ensure text readability */}
+            <div className="absolute inset-0 bg-black/45"></div>
+          </div>
+
+          {/* Hero Content */}
+          <div className="relative z-10 max-w-4xl px-6 flex flex-col items-center">
+            <span className="text-xl md:text-2xl text-white mb-4 font-medium tracking-wide drop-shadow-sm">Galerie Clinic</span>
+            <h1 className="text-4xl md:text-[3.5rem] font-medium tracking-tight text-white leading-[1.15] mb-8 drop-shadow-md">
+              A excelência da medicina estética,<br className="hidden md:block" />refletida na sua naturalidade.
             </h1>
-            <p className="text-lg text-[#3b2c24] mb-10 leading-relaxed max-w-lg">
-              Na Galerie Clinic, cada detalhe é pensado para revelar a sua melhor versão com tratamentos modernos, atendimento humanizado e resultados que encantam.
+            <p className="text-lg md:text-xl text-white/95 mb-10 leading-relaxed max-w-2xl drop-shadow-sm">
+              Aqui cada detalhe é pensado para revelar a sua melhor versão com tratamentos modernos, atendimento humanizado e resultados que encantam.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3.5 text-lg text-white bg-[#82533a] rounded-full hover:bg-[#6e4631] transition-colors">
+            <div className="flex flex-col sm:flex-row gap-5">
+              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 text-lg text-white bg-[#82533a] rounded-full hover:bg-[#6e4631] transition-all transform hover:scale-105 shadow-xl font-medium">
                 Agendar Avaliação
               </a>
-              <a href="#tratamentos" className="inline-flex items-center justify-center px-8 py-3.5 text-lg text-[#3b2c24] bg-[#b9b2a7] rounded-full hover:bg-[#a59e94] transition-colors">
+              <a href="#tratamentos" className="inline-flex items-center justify-center px-10 py-4 text-lg text-[#3b2c24] bg-[#fcfaf8] rounded-full hover:bg-white transition-all transform hover:scale-105 shadow-xl font-medium">
                 Ver tratamentos
               </a>
-            </div>
-          </div>
-          
-          <div className="w-full md:w-1/2">
-            <div className="relative w-full aspect-[4/3] md:aspect-auto md:h-[500px] overflow-hidden rounded-tr-[6rem] rounded-bl-[6rem] rounded-tl-3xl rounded-br-3xl">
-              <img src="/assets/PRF00474.jpg" alt="Profissional Galerie Clinic" className="object-cover w-full h-full object-top" />
             </div>
           </div>
         </section>
