@@ -294,7 +294,7 @@ const LandingPage = () => {
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Bioestimuladores<br />de Colagénio</h3>
                 <p className="text-base text-white/90 leading-relaxed">
-                  Melhore a flacidez e a qualidade da pele estimulando a sua produção natural.
+                  Melhore a flacidez e a qualidade da pele estimulando a sua produção natural de colagénio.
                 </p>
               </div>
             </div>
