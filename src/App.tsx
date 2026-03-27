@@ -275,9 +275,9 @@ const LandingPage = () => {
               </div>
             </div>
 
-            {/* Preenchimento Labial */}
+            {/* Hidratação Labial */}
             <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[300px]">
-              <img src="/assets/specialty_labial.png" alt="Preenchimento Labial" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+              <img src="/assets/specialty_labial.png" alt="Hidratação Labial" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Hidratação Labial</h3>
