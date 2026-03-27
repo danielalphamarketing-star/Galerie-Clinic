@@ -205,7 +205,7 @@ const ClinicGallery = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] mb-4">
-            Conheçam melhor a nossa clínica
+            Venha conhecer a nossa clínica
           </h2>
           <p className="text-lg text-[#3b2c24]/80 max-w-2xl mx-auto">
             Um espaço pensado para o seu bem-estar, com tecnologia de ponta e uma equipa dedicada a si.
