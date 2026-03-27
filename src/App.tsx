@@ -137,6 +137,60 @@ const LazyVideo = ({ src, isMuted, onMuteToggle }: { src: string, isMuted: boole
   );
 };
 
+const ResultadosSection = () => {
+  const results = [
+    '/assets/results/photo-output.jpg',
+    '/assets/results/photo-output (2).jpg',
+    '/assets/results/IMG_0518.jpg',
+    '/assets/results/IMG_4970.jpg',
+    '/assets/results/IMG_7460.jpg',
+    '/assets/results/IMG_8547.jpg',
+    '/assets/results/IMG_9732.jpg',
+    '/assets/results/IMG_0723.JPG',
+    '/assets/results/IMG_3398.JPG',
+    '/assets/results/IMG_6535.JPG',
+    '/assets/results/IMG_8090.JPG',
+    '/assets/results/IMG_9728.JPG',
+    '/assets/results/e36ad939-8bd5-4792-ab4e-35a14322332f.JPG',
+    '/assets/results/6916aa89-a0e9-4a92-8341-c0dfc19e35b0.JPG',
+    '/assets/results/88adef43-856f-49df-8f67-d5009d014f6e.JPG'
+  ];
+
+  return (
+    <section id="resultados" className="py-24 bg-[#fcf9f5] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] mb-4">
+            Resultados que Inspiram
+          </h2>
+          <p className="text-lg text-[#3b2c24]/80 max-w-2xl mx-auto">
+            Realce a sua beleza natural com o acompanhamento da nossa equipa.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {results.map((src, i) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-white"
+            >
+              <img 
+                src={src} 
+                alt={`Resultado ${i + 1}`} 
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const LandingPage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -184,17 +238,20 @@ const LandingPage = () => {
       )}
 
       <main>
-        {/* Hero Section - Redesigned to match mockup exactly */}
-        <section className="relative w-full h-[90vh] min-h-[700px] overflow-hidden flex items-center justify-center text-center">
-          {/* Background Image/Video */}
+        {/* Hero Section - Fixed background and layout duplication */}
+        <section className="relative w-full h-[85vh] min-h-[600px] overflow-hidden flex items-center justify-center text-center">
+          {/* Background Video */}
           <div className="absolute inset-0 z-0">
-            <img 
-              src="/assets/hero-bg.png" 
-              alt="Galerie Clinic Background"
+            <video
               className="w-full h-full object-cover"
+              src="/videos/v9.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
             />
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black/30"></div>
+            <div className="absolute inset-0 bg-black/40"></div>
           </div>
 
           {/* Hero Content */}
@@ -203,14 +260,14 @@ const LandingPage = () => {
             <h1 className="text-4xl md:text-[3.8rem] font-medium tracking-tight text-white leading-[1.1] mb-8 drop-shadow-md">
               A excelência da medicina estética,<br />refletida na sua naturalidade.
             </h1>
-            <p className="text-lg md:text-xl text-white/95 mb-12 leading-relaxed max-w-2xl drop-shadow-sm">
+            <p className="text-lg md:text-xl text-white/95 mb-10 leading-relaxed max-w-2xl drop-shadow-sm">
               Aqui cada detalhe é pensado para revelar a sua melhor versão com tratamentos modernos, atendimento humanizado e resultados que encantam.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6">
-              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 text-lg text-white bg-[#82533a] rounded-full hover:bg-[#6e4631] transition-all transform hover:scale-105 shadow-2xl font-medium">
+            <div className="flex flex-col sm:flex-row gap-5">
+              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 text-lg text-white bg-[#82533a] rounded-full hover:bg-[#6e4631] transition-all transform hover:scale-105 shadow-xl font-medium">
                 Agendar Avaliação
               </a>
-              <a href="#tratamentos" className="inline-flex items-center justify-center px-10 py-4 text-lg text-[#3b2c24] bg-white rounded-full hover:bg-white transition-all transform hover:scale-105 shadow-2xl font-medium">
+              <a href="#tratamentos" className="inline-flex items-center justify-center px-10 py-4 text-lg text-[#3b2c24] bg-white rounded-full hover:bg-white/90 transition-all transform hover:scale-105 shadow-xl font-medium">
                 Ver tratamentos
               </a>
             </div>
@@ -218,6 +275,8 @@ const LandingPage = () => {
         </section>
 
         <VideoCarousel />
+        
+        <ResultadosSection />
 
 
         {/* Section: Sente que os sinais... */}
