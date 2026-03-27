@@ -156,36 +156,40 @@ const ResultadosSection = () => {
     '/assets/results/88adef43-856f-49df-8f67-d5009d014f6e.JPG'
   ];
 
+  const allResults = [...results, ...results];
+
   return (
     <section id="resultados" className="py-24 bg-[#fcf9f5] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] mb-4">
-            Resultados que Inspiram
-          </h2>
-          <p className="text-lg text-[#3b2c24]/80 max-w-2xl mx-auto">
-            Realce a sua beleza natural com o acompanhamento da nossa equipa.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {results.map((src, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-white"
-            >
+      <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
+        <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] mb-4">
+          Resultados que Inspiram
+        </h2>
+        <p className="text-lg text-[#3b2c24]/80 max-w-2xl mx-auto">
+          Realce a sua beleza natural com o acompanhamento da nossa equipa.
+        </p>
+      </div>
+
+      <div className="relative flex">
+        <motion.div
+          className="flex gap-6 px-4"
+          style={{ willChange: "transform" }}
+          animate={{ x: [0, -4560] }} // Adjusted for 15 items: (280+24)*15
+          transition={{
+            duration: 120, // Very slow for seamless look
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        >
+          {allResults.map((src, i) => (
+            <div key={i} className="relative min-w-[280px] aspect-[1/1] rounded-2xl overflow-hidden shadow-sm bg-white transition-transform hover:scale-[1.02] duration-300">
               <img 
                 src={src} 
                 alt={`Resultado ${i + 1}`} 
                 className="w-full h-full object-cover"
               />
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
