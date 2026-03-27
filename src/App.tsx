@@ -257,10 +257,10 @@ const LandingPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
             
-            {/* Botox (Wide) */}
+            {/* Toxina Botulínica (Wide) */}
             <div className="md:col-span-2 bg-[#c69d7b] rounded-[3rem] overflow-hidden flex flex-col md:flex-row relative min-h-[300px]">
               <div className="p-8 md:p-12 md:w-1/2 flex flex-col justify-center z-10">
-                <h3 className="text-2xl font-medium tracking-tight text-white mb-4">Botox (Toxina<br />Botulínica)</h3>
+                <h3 className="text-2xl font-medium tracking-tight text-white mb-4">Toxina<br />Botulínica</h3>
                 <p className="text-base text-white/90 mb-6 leading-relaxed">
                   Suavize rugas de expressão e previna o envelhecimento. Aplicação precisa para um aspeto mais jovem e relaxado, mantendo a naturalidade e a expressividade da sua face.
                 </p>
@@ -271,7 +271,7 @@ const LandingPage = () => {
                 </div>
               </div>
               <div className="h-48 md:h-auto md:w-1/2">
-                <img src="/assets/specialty_botox.png" alt="Botox" className="w-full h-full object-cover" />
+                <img src="/assets/specialty_botox.png" alt="Toxina Botulínica" className="w-full h-full object-cover" />
               </div>
             </div>
 
