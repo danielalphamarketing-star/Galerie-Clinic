@@ -280,9 +280,9 @@ const LandingPage = () => {
               <img src="/assets/specialty_labial.png" alt="Preenchimento Labial" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
-                <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Preenchimento Labial</h3>
+                <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Hidratação Labial</h3>
                 <p className="text-base text-white/90 leading-relaxed">
-                  Realce os seus lábios com volume e contorno harmoniosos, sem exageros.
+                  Realce os seus lábios com ácido hialuronico, sem exageros. Consiga um contorno elegante e devolva ao lábio o volume que já teve.
                 </p>
               </div>
             </div>
