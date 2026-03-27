@@ -23,7 +23,7 @@ const VIDEO_SOURCES = [
 const FAQ_ITEMS = [
   {
     question: 'Os tratamentos são muito caros na Galerie Clinic?',
-    answer: 'Os nossos valores refletem a qualidade, segurança e ética dos procedimentos que realizamos. Fazemos sempre triagem de valores por telefone antes da consulta, para que venha totalmente informada e sem surpresas.',
+    answer: 'Os nossos valores refletem a qualidade, segurança e ética dos procedimentos que realizamos. Fazemos sempre triagem de valores por telefone antes da consulta, para que venha totalmente informada e sem surpresas. O valor dos tratamentos reflete também a dedicação e acompanhamento de toda a nossa equipa após a realização do procedimento, para que se sinta sempre segura.',
   },
   {
     question: 'Tenho receio de injetáveis. Os procedimentos são seguros?',
