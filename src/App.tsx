@@ -162,7 +162,7 @@ const ResultadosSection = () => {
     <section id="resultados" className="pb-24 pt-12 bg-[#fcf9f5] overflow-hidden border-t border-[#3b2c24]/5">
       <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
         <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24]">
-          Antes e Depois dos nossos pacientes
+          Os nossos resultados
         </h2>
       </div>
 
@@ -178,11 +178,11 @@ const ResultadosSection = () => {
           }}
         >
           {allResults.map((src, i) => (
-            <div key={i} className="relative min-w-[280px] aspect-[1/1] rounded-2xl overflow-hidden shadow-sm bg-white transition-transform hover:scale-[1.02] duration-300">
+            <div key={i} className="relative min-w-[320px] md:min-w-[400px] aspect-[4/3] rounded-2xl overflow-hidden shadow-sm bg-white transition-transform hover:scale-[1.02] duration-300 border border-[#3b2c24]/5">
               <img 
                 src={src} 
                 alt={`Resultado ${i + 1}`} 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain bg-[#f8f5f2]"
               />
             </div>
           ))}
@@ -506,11 +506,11 @@ const LandingPage = () => {
         {/* Section: About - Redesigned to split screen */}
         <section className="relative w-full flex flex-col md:flex-row min-h-[600px] overflow-hidden">
           {/* Left Side: Image */}
-          <div className="w-full md:w-1/2 relative h-[400px] md:h-auto">
+          <div className="w-full md:w-1/2 relative min-h-[500px] lg:min-h-[700px]">
             <img 
               src="/assets/skingirls.jpg" 
               alt="Galerie Clinic - A nossa equipa" 
-              className="absolute inset-0 w-full h-full object-cover object-center"
+              className="absolute inset-0 w-full h-full object-cover object-[center_25%]"
             />
             {/* Overlay Badge from previous design if needed, but mockup doesn't have it */}
             <div className="absolute top-8 left-8 z-20 w-32 h-32 bg-[#82533a] rounded-full hidden md:flex items-center justify-center p-2 shadow-lg scale-75 origin-top-left">
