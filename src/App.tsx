@@ -179,9 +179,9 @@ const ResultadosSection = () => {
         >
           {allResults.map((src, i) => (
             <div key={i} className="relative min-w-[320px] md:min-w-[400px] aspect-[4/3] rounded-2xl overflow-hidden shadow-sm bg-white transition-transform hover:scale-[1.02] duration-300 border border-[#3b2c24]/5">
-              <img 
-                src={src} 
-                alt={`Resultado ${i + 1}`} 
+              <img
+                src={src}
+                alt={`Resultado ${i + 1}`}
                 className="w-full h-full object-contain bg-[#f8f5f2]"
               />
             </div>
@@ -211,23 +211,22 @@ const AboutSpaceSection = () => {
     <section id="clinica" className="bg-[#ada69a] py-32 px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-stretch">
         {/* Left Card: Slideshow of Images */}
-        <div 
+        <div
           className="w-full md:w-1/2 bg-[#eee9e2] rounded-[50px] overflow-hidden shadow-sm relative min-h-[500px]"
         >
           {images.map((img, idx) => (
-            <img 
+            <img
               key={idx}
-              src={img} 
-              alt={`Galerie Clinic - O nosso espaço ${idx + 1}`} 
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                idx === currentImg ? 'opacity-100' : 'opacity-0'
-              }`}
+              src={img}
+              alt={`Galerie Clinic - O nosso espaço ${idx + 1}`}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${idx === currentImg ? 'opacity-100' : 'opacity-0'
+                }`}
             />
           ))}
         </div>
 
         {/* Right Card: Text */}
-        <div 
+        <div
           className="w-full md:w-1/2 bg-[#eee9e2] rounded-[50px] p-12 lg:p-24 flex flex-col justify-center shadow-sm"
         >
           <span className="text-xs font-bold tracking-[0.3em] uppercase text-[#3b2c24]/50 mb-8 block">
@@ -265,7 +264,7 @@ const ContactForm = () => {
     formData.append("access_key", "YOUR_ACCESS_KEY_HERE"); // User needs to replace this
     formData.append("subject", "Novo Contacto Recebido – Galerie Clinic");
     formData.append("from_name", "Landing Page Leads");
-    
+
     // Multiple recipients requirement: We'll add them to the subject or message 
     // note: Web3Forms free usually sends to one registered email. 
     // Pro allows multiple. I'll add a note for the user.
@@ -303,7 +302,7 @@ const ContactForm = () => {
           <p className="text-lg text-[#3b2c24]/80 mb-8">
             Obrigado pelo seu contacto. A nossa equipa irá responder-lhe com a maior brevidade possível.
           </p>
-          <button 
+          <button
             onClick={() => setIsSuccess(false)}
             className="text-[#824A2F] font-medium hover:underline"
           >
@@ -330,9 +329,9 @@ const ContactForm = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex flex-col gap-2">
               <label htmlFor="nome" className="text-sm font-medium text-[#3b2c24]/70 ml-1">Nome</label>
-              <input 
+              <input
                 required
-                type="text" 
+                type="text"
                 name="nome"
                 id="nome"
                 className="w-full px-6 py-4 rounded-2xl bg-[#fcf9f5] border border-[#3b2c24]/10 focus:outline-none focus:border-[#824A2F]/30 transition-colors"
@@ -341,9 +340,9 @@ const ContactForm = () => {
             </div>
             <div className="flex flex-col gap-2">
               <label htmlFor="email" className="text-sm font-medium text-[#3b2c24]/70 ml-1">E-mail</label>
-              <input 
+              <input
                 required
-                type="email" 
+                type="email"
                 name="email"
                 id="email"
                 className="w-full px-6 py-4 rounded-2xl bg-[#fcf9f5] border border-[#3b2c24]/10 focus:outline-none focus:border-[#824A2F]/30 transition-colors"
@@ -355,9 +354,9 @@ const ContactForm = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex flex-col gap-2">
               <label htmlFor="telefone" className="text-sm font-medium text-[#3b2c24]/70 ml-1">Telemóvel / Contacto</label>
-              <input 
+              <input
                 required
-                type="tel" 
+                type="tel"
                 name="telefone"
                 id="telefone"
                 className="w-full px-6 py-4 rounded-2xl bg-[#fcf9f5] border border-[#3b2c24]/10 focus:outline-none focus:border-[#824A2F]/30 transition-colors"
@@ -366,7 +365,7 @@ const ContactForm = () => {
             </div>
             <div className="flex flex-col gap-2">
               <label htmlFor="procedimento" className="text-sm font-medium text-[#3b2c24]/70 ml-1">Em que procedimento está interessado?</label>
-              <select 
+              <select
                 required
                 name="procedimento"
                 id="procedimento"
@@ -383,7 +382,7 @@ const ContactForm = () => {
 
           <div className="flex flex-col gap-2">
             <label htmlFor="mensagem" className="text-sm font-medium text-[#3b2c24]/70 ml-1">Como podemos ajudar?</label>
-            <textarea 
+            <textarea
               required
               name="mensagem"
               id="mensagem"
@@ -397,7 +396,7 @@ const ContactForm = () => {
             <p className="text-red-500 text-sm ml-1 bg-red-50 p-3 rounded-xl border border-red-100">{error}</p>
           )}
 
-          <button 
+          <button
             type="submit"
             disabled={isSubmitting}
             className={`w-full py-5 bg-[#824A2F] text-white rounded-full text-lg font-medium transition-all transform hover:scale-[1.01] active:scale-[0.99] shadow-lg flex items-center justify-center gap-3 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#6b3d27]'}`}
@@ -426,7 +425,7 @@ const LandingPage = () => {
         <a href="#" className="flex items-center">
           <span className="text-xl font-medium tracking-[0.15em] uppercase">GALERIE CLINIC</span>
         </a>
-        
+
         <nav className="hidden md:flex items-center gap-8">
           <a href="#tratamentos" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Tratamentos</a>
           <a href="#como-funcionamos" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Como Funcionamos</a>
@@ -438,7 +437,7 @@ const LandingPage = () => {
           Agendar Consulta
         </a>
 
-        <button 
+        <button
           className="md:hidden text-[#3b2c24]"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
@@ -482,7 +481,7 @@ const LandingPage = () => {
           <div className="relative z-10 max-w-4xl px-6 flex flex-col items-center">
             <span className="text-xl md:text-2xl text-white mb-6 font-medium tracking-[0.2em] drop-shadow-sm uppercase">Galerie Clinic</span>
             <h1 className="text-4xl md:text-[3.8rem] font-medium tracking-tight text-white leading-[1.1] mb-8 drop-shadow-md max-w-[800px]">
-              A excelência da medicina estética,<br /> refletida na sua naturalidade.
+              A excelência da medicina estética, refletida na sua naturalidade.
             </h1>
             <p className="text-lg md:text-xl text-white/95 mb-10 leading-relaxed max-w-[700px] drop-shadow-sm">
               Aqui cada detalhe é pensado para revelar a sua melhor versão com tratamentos modernos,<br /> atendimento humanizado e resultados que encantam.
@@ -499,7 +498,7 @@ const LandingPage = () => {
         </section>
 
         <VideoCarousel />
-        
+
         <ResultadosSection />
 
 
@@ -507,9 +506,9 @@ const LandingPage = () => {
         <section className="relative w-full flex flex-col md:flex-row min-h-[600px] overflow-hidden">
           {/* Left Side: Image */}
           <div className="w-full md:w-1/2 relative min-h-[500px] lg:min-h-[700px]">
-            <img 
-              src="/assets/skingirls.jpg" 
-              alt="Galerie Clinic - A nossa equipa" 
+            <img
+              src="/assets/skingirls.jpg"
+              alt="Galerie Clinic - A nossa equipa"
               className="absolute inset-0 w-full h-full object-cover object-[center_25%]"
             />
             {/* Overlay Badge from previous design if needed, but mockup doesn't have it */}
@@ -551,7 +550,7 @@ const LandingPage = () => {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-            
+
             {/* Toxina Botulínica (Wide) */}
             <div className="md:col-span-2 bg-[#c69d7b] rounded-[3rem] overflow-hidden flex flex-col md:flex-row relative min-h-[450px]">
               <div className="p-8 md:p-12 md:w-1/2 flex flex-col justify-center z-10">
@@ -690,7 +689,7 @@ const LandingPage = () => {
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[#3b2c24] text-center mb-16">
             Perguntas Frequentes
           </h2>
-          
+
           <div className="space-y-4">
             {FAQ_ITEMS.map((item, i) => (
               <div key={i} className="rounded-[2rem] overflow-hidden">
@@ -735,7 +734,7 @@ const LandingPage = () => {
       {/* Footer */}
       <footer className="bg-[#fcfaf8] pt-20 pb-10">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-          
+
           <div className="flex flex-col">
             <span className="text-2xl font-medium tracking-tight uppercase text-[#3b2c24] mb-4">Galerie Clinic</span>
             <p className="text-lg text-[#3b2c24] mb-8 max-w-sm">
@@ -793,8 +792,8 @@ const LandingPage = () => {
       >
         <span className="absolute w-full h-full rounded-full bg-[#25D366] animate-ping opacity-40"></span>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-8 h-8 fill-white" aria-hidden="true">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.837L.057 23.527a.5.5 0 0 0 .638.635l5.74-1.503A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.946a9.946 9.946 0 0 1-5.092-1.399l-.364-.217-3.773.988.999-3.671-.237-.376A9.946 9.946 0 0 1 2.054 12C2.054 6.497 6.497 2.054 12 2.054S21.946 6.497 21.946 12 17.503 21.946 12 21.946z"/>
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.837L.057 23.527a.5.5 0 0 0 .638.635l5.74-1.503A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.946a9.946 9.946 0 0 1-5.092-1.399l-.364-.217-3.773.988.999-3.671-.237-.376A9.946 9.946 0 0 1 2.054 12C2.054 6.497 6.497 2.054 12 2.054S21.946 6.497 21.946 12 17.503 21.946 12 21.946z" />
         </svg>
       </a>
     </div>
