@@ -482,10 +482,10 @@ const LandingPage = () => {
           <div className="relative z-10 max-w-4xl px-6 flex flex-col items-center">
             <span className="text-xl md:text-2xl text-white mb-6 font-medium tracking-[0.2em] drop-shadow-sm uppercase">Galerie Clinic</span>
             <h1 className="text-4xl md:text-[3.8rem] font-medium tracking-tight text-white leading-[1.1] mb-8 drop-shadow-md">
-              A excelência da medicina estética,<br />refletida na sua naturalidade.
+              A excelência da medicina estética,<br className="hidden md:block" /> refletida na sua naturalidade.
             </h1>
-            <p className="text-lg md:text-xl text-white/95 mb-10 leading-relaxed max-w-2xl drop-shadow-sm">
-              Aqui cada detalhe é pensado para revelar a sua melhor versão com tratamentos modernos, atendimento humanizado e resultados que encantam.
+            <p className="text-lg md:text-xl text-white/95 mb-10 leading-relaxed max-w-3xl drop-shadow-sm">
+              Aqui cada detalhe é pensado para revelar a sua melhor versão com tratamentos modernos,<br className="hidden md:block" /> atendimento humanizado e resultados que encantam.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
               <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 text-lg text-white bg-[#82533a] rounded-full hover:bg-[#6e4631] transition-all transform hover:scale-105 shadow-xl font-medium">
@@ -553,25 +553,24 @@ const LandingPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
             
             {/* Toxina Botulínica (Wide) */}
-            <div className="md:col-span-2 bg-[#c69d7b] rounded-[3rem] overflow-hidden flex flex-col md:flex-row relative min-h-[300px]">
-              <div className="p-8 md:p-12 md:w-1/2 flex flex-col justify-center z-10">
-                <h3 className="text-2xl font-medium tracking-tight text-white mb-4">Toxina<br />Botulínica</h3>
-                <p className="text-base text-white/90 mb-6 leading-relaxed">
+            <div className="md:col-span-2 relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[450px]">
+              <img src="/assets/Toxina Botulínica.png" alt="Toxina Botulínica" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 p-8 md:p-12">
+                <h3 className="text-3xl font-medium tracking-tight text-white mb-4">Toxina Botulínica</h3>
+                <p className="text-lg text-white/90 mb-6 leading-relaxed max-w-xl">
                   Suavize rugas de expressão e previna o envelhecimento. Aplicação precisa para um aspeto mais jovem e relaxado, mantendo a naturalidade e a expressividade da sua face.
                 </p>
                 <div>
-                  <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 text-base text-white bg-[#824A2F] rounded-full hover:bg-[#6b3d27] transition-colors">
+                  <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3 text-base text-white bg-[#824A2F] rounded-full hover:bg-[#6b3d27] transition-colors">
                     Agendar Avaliação
                   </a>
                 </div>
               </div>
-              <div className="h-48 md:h-auto md:w-1/2">
-                <img src="/assets/Toxina Botulínica.png" alt="Toxina Botulínica" className="w-full h-full object-cover" />
-              </div>
             </div>
 
             {/* Hidratação Labial */}
-            <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[300px]">
+            <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[450px]">
               <img src="/assets/Hidratação Labial.png" alt="Hidratação Labial" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
@@ -583,7 +582,7 @@ const LandingPage = () => {
             </div>
 
             {/* Bioestimuladores */}
-            <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[300px]">
+            <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[450px]">
               <img src="/assets/Bioestimuladores de Colagenio.jpg" alt="Bioestimuladores" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
@@ -595,7 +594,7 @@ const LandingPage = () => {
             </div>
 
             {/* Laser */}
-            <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[300px]">
+            <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[450px]">
               <img src="/assets/Laser para Qualidade de Pele.jpg" alt="Laser" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
@@ -607,7 +606,7 @@ const LandingPage = () => {
             </div>
 
             {/* PRP */}
-            <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[300px]">
+            <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[450px]">
               <img src="/assets/specialty_prp.png" alt="PRP Capilar" className="absolute inset-0 w-full h-full object-cover opacity-90 object-top" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
@@ -619,20 +618,19 @@ const LandingPage = () => {
             </div>
 
             {/* Vitaminas (Wide) */}
-            <div className="md:col-span-3 bg-[#82533a] rounded-[3rem] overflow-hidden flex flex-col md:flex-row relative min-h-[300px]">
-              <div className="p-8 md:p-12 md:w-1/2 flex flex-col justify-center z-10">
-                <h3 className="text-2xl font-medium tracking-tight text-white mb-4">Vitaminas e Nutrição Dérmica</h3>
-                <p className="text-base text-white/90 mb-6 leading-relaxed">
+            <div className="md:col-span-3 relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[450px]">
+              <img src="/assets/Vitaminas e Nutrição Dérmica.jpg" alt="Nutrição Dérmica" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 p-8 md:p-12">
+                <h3 className="text-3xl font-medium tracking-tight text-white mb-4">Vitaminas e Nutrição Dérmica</h3>
+                <p className="text-lg text-white/90 mb-6 leading-relaxed max-w-xl">
                   Infusão de vitaminas e nutrientes essenciais diretamente na pele para hidratação profunda, luminosidade e proteção antioxidante.
                 </p>
                 <div>
-                  <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-2.5 text-base text-white bg-[#824A2F] rounded-full hover:bg-[#6b3d27] transition-colors">
+                  <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3 text-base text-white bg-[#824A2F] rounded-full hover:bg-[#6b3d27] transition-colors">
                     Agendar Avaliação
                   </a>
                 </div>
-              </div>
-              <div className="h-56 md:h-auto md:w-1/2">
-                <img src="/assets/Vitaminas e Nutrição Dérmica.jpg" alt="Nutrição Dérmica" className="w-full h-full object-cover" />
               </div>
             </div>
 
