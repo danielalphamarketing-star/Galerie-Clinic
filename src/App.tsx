@@ -3,12 +3,6 @@ import { Menu, MessageSquare, ScanFace, Star, BadgeCheck, ChevronDown, Instagram
 import { motion, useInView } from 'motion/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import toxinaImg from './Toxina Botulínica.png';
-import labialImg from './Hidratação Labial.png';
-import bioestimuladoresImg from './Bioestimuladores de Colagenio.jpg';
-import laserImg from './Laser para Qualidade de Pele.jpg';
-import vitaminasImg from './Vitaminas e Nutrição Dérmica.jpg';
-
 const WA_LINK = 'https://wa.me/351916660005?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Galerie%20Clinic.';
 
 const VIDEO_SOURCES = [
@@ -572,13 +566,13 @@ const LandingPage = () => {
                 </div>
               </div>
               <div className="h-48 md:h-auto md:w-1/2">
-                <img src={toxinaImg} alt="Toxina Botulínica" className="w-full h-full object-cover" />
+                <img src="/assets/Toxina Botulínica.png" alt="Toxina Botulínica" className="w-full h-full object-cover" />
               </div>
             </div>
 
             {/* Hidratação Labial */}
             <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[300px]">
-              <img src={labialImg} alt="Hidratação Labial" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+              <img src="/assets/Hidratação Labial.png" alt="Hidratação Labial" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Hidratação Labial</h3>
@@ -590,7 +584,7 @@ const LandingPage = () => {
 
             {/* Bioestimuladores */}
             <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[300px]">
-              <img src={bioestimuladoresImg} alt="Bioestimuladores" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+              <img src="/assets/Bioestimuladores de Colagenio.jpg" alt="Bioestimuladores" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Bioestimuladores<br />de Colagénio</h3>
@@ -602,7 +596,7 @@ const LandingPage = () => {
 
             {/* Laser */}
             <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[300px]">
-              <img src={laserImg} alt="Laser" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+              <img src="/assets/Laser para Qualidade de Pele.jpg" alt="Laser" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Laser para<br />Qualidade de Pele</h3>
@@ -638,7 +632,7 @@ const LandingPage = () => {
                 </div>
               </div>
               <div className="h-56 md:h-auto md:w-1/2">
-                <img src={vitaminasImg} alt="Nutrição Dérmica" className="w-full h-full object-cover" />
+                <img src="/assets/Vitaminas e Nutrição Dérmica.jpg" alt="Nutrição Dérmica" className="w-full h-full object-cover" />
               </div>
             </div>
 
