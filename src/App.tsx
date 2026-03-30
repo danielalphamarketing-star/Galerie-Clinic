@@ -607,7 +607,7 @@ const LandingPage = () => {
 
             {/* PRP */}
             <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[450px]">
-              <img src="/assets/specialty_prp.png" alt="PRP Capilar" className="absolute inset-0 w-full h-full object-cover opacity-90 object-top" />
+              <img src="/assets/specialty_prp.jpeg" alt="PRP Capilar" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">PRP<br />Capilar</h3>
