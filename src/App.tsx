@@ -478,13 +478,13 @@ const LandingPage = () => {
           </div>
 
           {/* Hero Content */}
-          <div className="relative z-10 max-w-4xl px-6 flex flex-col items-center">
+          <div className="relative z-10 max-w-6xl px-6 flex flex-col items-center">
             <span className="text-xl md:text-2xl text-white mb-6 font-medium tracking-[0.2em] drop-shadow-sm uppercase">Galerie Clinic</span>
-            <h1 className="text-4xl md:text-[3.8rem] font-medium tracking-tight text-white leading-[1.1] mb-8 drop-shadow-md max-w-[800px]">
-              A excelência da medicina estética, refletida na sua naturalidade.
+            <h1 className="text-4xl md:text-[3.8rem] font-medium tracking-tight text-white leading-[1.1] mb-8 drop-shadow-md max-w-none text-center">
+              A excelência da medicina estética,<br className="hidden md:block" /> refletida na sua naturalidade.
             </h1>
-            <p className="text-lg md:text-xl text-white/95 mb-10 leading-relaxed max-w-[700px] drop-shadow-sm">
-              Aqui cada detalhe é pensado para revelar a sua melhor versão com tratamentos modernos,atendimento humanizado e resultados que encantam.
+            <p className="text-lg md:text-xl text-white/95 mb-10 leading-relaxed max-w-[800px] drop-shadow-sm text-center">
+              Aqui cada detalhe é pensado para revelar a sua melhor versão com tratamentos modernos,<br className="hidden md:block" /> atendimento humanizado e resultados que encantam.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
               <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 text-lg text-white bg-[#82533a] rounded-full hover:bg-[#6e4631] transition-all transform hover:scale-105 shadow-xl font-medium">
