@@ -22,16 +22,16 @@ const VIDEO_SOURCES = [
 
 const FAQ_ITEMS = [
   {
-    question: 'Os tratamentos são muito caros na Galerie Clinic?',
-    answer: 'Os nossos valores refletem a qualidade, segurança e ética dos procedimentos que realizamos. Fazemos sempre triagem de valores por telefone antes da consulta, para que venha totalmente informada e sem surpresas. O valor dos tratamentos reflete também a dedicação e acompanhamento de toda a nossa equipa após a realização do procedimento, para que se sinta sempre segura.',
+    question: 'Onde fica localizada a Galerie Clinic?',
+    answer: 'A Galerie Clinic está localizada na marginal da Foz do Porto, na Rua do Ouro 736.',
   },
   {
     question: 'Tenho receio de injetáveis. Os procedimentos são seguros?',
-    answer: 'Absolutamente. A nossa equipa é formada e supervisionada pela Dra. Rita Sêco, e nunca realizamos qualquer procedimento sem antes explicar cada detalhe. Começamos sempre de forma gradual e segura, respeitando o seu ritmo.',
+    answer: 'Sim, a segurança é sempre a nossa prioridade. Todos os procedimentos são realizados e supervisionados por profissionais qualificados, sob a orientação da Dra. Rita Sêco. Antes de qualquer intervenção, explicamos detalhadamente cada etapa e começamos sempre de forma gradual, de forma a respeitar o seu conforto e ritmo.',
   },
   {
-    question: 'Qual o tempo de duração dos resultados?',
-    answer: 'Depende do tratamento. O Botox tem duração de 3 a 6 meses, os preenchimentos de 8 a 12 meses e os bioestimuladores de colagénio têm efeito progressivo e duradouro. Em consulta, traçamos um plano personalizado para si.',
+    question: 'Tenho receio de perder a naturalidade do meu rosto. É possível evitar resultados artificiais?',
+    answer: 'Sim, essa é precisamente a base da nossa abordagem. Trabalhamos com o objetivo de realçar, e não alterar, as suas características. Cada plano é definido após uma avaliação cuidada e ajustado ao longo do tempo, de forma progressiva e controlada. O foco está sempre em resultados naturais, equilibrados e em harmonia com a sua identidade.',
   },
 ];
 
@@ -143,7 +143,6 @@ const ResultadosSection = () => {
     '/assets/results/photo-output (2).jpg',
     '/assets/results/IMG_0518.jpg',
     '/assets/results/IMG_4970.jpg',
-    '/assets/results/IMG_7460.jpg',
     '/assets/results/IMG_8547.jpg',
     '/assets/results/IMG_9732.jpg',
     '/assets/results/IMG_0723.JPG',
@@ -192,62 +191,7 @@ const ResultadosSection = () => {
   );
 };
 
-const AboutSpaceSection = () => {
-  const [currentImg, setCurrentImg] = React.useState(0);
-  const images = [
-    '/assets/clinic_interior_1.jpg',
-    '/assets/clinic_interior_2.jpg',
-    '/assets/clinic_interior_3.jpg'
-  ];
 
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImg((prev) => (prev + 1) % images.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
-
-  return (
-    <section id="clinica" className="bg-[#ada69a] py-32 px-6 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-stretch">
-        {/* Left Card: Slideshow of Images */}
-        <div
-          className="w-full md:w-1/2 bg-[#eee9e2] rounded-[50px] overflow-hidden shadow-sm relative min-h-[500px]"
-        >
-          {images.map((img, idx) => (
-            <img
-              key={idx}
-              src={img}
-              alt={`Galerie Clinic - O nosso espaço ${idx + 1}`}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${idx === currentImg ? 'opacity-100' : 'opacity-0'
-                }`}
-            />
-          ))}
-        </div>
-
-        {/* Right Card: Text */}
-        <div
-          className="w-full md:w-1/2 bg-[#eee9e2] rounded-[50px] p-12 lg:p-24 flex flex-col justify-center shadow-sm"
-        >
-          <span className="text-xs font-bold tracking-[0.3em] uppercase text-[#3b2c24]/50 mb-8 block">
-            A Nossa Clínica
-          </span>
-          <h2 className="text-3xl lg:text-4xl xl:text-5xl font-medium tracking-tight text-[#3b2c24] mb-12 leading-[1.2]">
-            Bem-vinda à Galerie Clinic, onde a beleza se encontra com a inovação no coração da encantadora cidade com vista para o deslumbrante Rio Douro.
-          </h2>
-          <div className="space-y-8 text-lg lg:text-xl text-[#3b2c24]/80 leading-relaxed font-light">
-            <p>
-              A nossa clínica destaca-se como um farol de excelência, oferecendo tratamentos estéticos avançados executados por uma equipa multidisciplinar de profissionais altamente qualificados.
-            </p>
-            <p>
-              O espaço foi meticulosamente desenhado para unir a sofisticação ao conforto, criando uma atmosfera que promove o relaxamento e o bem-estar durante toda a sua jornada connosco.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
 
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -434,7 +378,7 @@ const LandingPage = () => {
         </nav>
 
         <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="hidden md:inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#824A2F] text-white text-base font-medium hover:bg-[#6b3d27] transition-colors">
-          Agendar Consulta
+          Agendar Avaliação
         </a>
 
         <button
@@ -454,7 +398,7 @@ const LandingPage = () => {
             <a href="#resultados" onClick={() => setIsMenuOpen(false)} className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Resultados</a>
             <a href="#contacte-nos" onClick={() => setIsMenuOpen(false)} className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Contacte-nos</a>
             <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#824A2F] text-white text-base font-medium hover:bg-[#6b3d27] transition-colors w-full">
-              Agendar Consulta
+              Agendar Avaliação
             </a>
           </nav>
         </div>
@@ -481,10 +425,10 @@ const LandingPage = () => {
           <div className="relative z-10 max-w-6xl px-6 flex flex-col items-center">
             <span className="text-xl md:text-2xl text-white mb-6 font-medium tracking-[0.2em] drop-shadow-sm uppercase">Galerie Clinic</span>
             <h1 className="text-4xl md:text-[3.8rem] font-medium tracking-tight text-white leading-[1.1] mb-8 drop-shadow-md max-w-none text-center">
-              A excelência da medicina estética,<br className="hidden md:block" /> refletida na sua naturalidade.
+              A EXCELÊNCIA DA MEDICINA ESTÉTICA<br className="hidden md:block" /> REFLETIDA NA SUA NATURALIDADE
             </h1>
             <p className="text-lg md:text-xl text-white/95 mb-10 leading-relaxed max-w-[800px] drop-shadow-sm text-center">
-              Aqui cada detalhe é pensado para revelar a sua melhor versão com tratamentos modernos,<br className="hidden md:block" /> atendimento humanizado e resultados que encantam.
+              A medicina estética na sua forma mais cuidada. Resultados naturais, orientados pela precisão clínica. Aqui cada detalhe é pensado para revelar a sua melhor versão com tratamentos modernos, atendimento humanizado e resultados que encantam.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
               <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 text-lg text-white bg-[#82533a] rounded-full hover:bg-[#6e4631] transition-all transform hover:scale-105 shadow-xl font-medium">
@@ -530,10 +474,10 @@ const LandingPage = () => {
             </h2>
             <div className="space-y-6 text-lg md:text-xl text-white/90 leading-relaxed font-light">
               <p className="font-medium text-white">
-                A sua beleza merece ser celebrada, não desfigurada por exageros ou promessas vazias.
+                As Skin Girls, são a equipa que desenvolve e acompanha cada etapa do seu tratamento, com rigor, proximidade e atenção a cada detalhe.
               </p>
               <p>
-                Na Galerie Clinic, em Porto, a nossa equipa de especialistas, supervisionada pela Dra. Rita Sêco, oferece uma medicina estética focada em resultados naturais e seguros.
+                A sua beleza merece ser celebrada, não desfigurada por exageros ou promessas vazias. Na Galerie Clinic, em Porto, a nossa equipa de especialistas, supervisionada pela Dra. Rita Sêco, oferece uma medicina estética focada em resultados naturais e seguros.
               </p>
               <p>
                 Defendemos a individualidade e recusamos qualquer procedimento que prometa o impossível. Acreditamos na verdade, na ciência e em resultados visíveis ao longo do tempo. A segurança dos procedimentos e a saúde da sua pele são a nossa prioridade.
@@ -565,13 +509,13 @@ const LandingPage = () => {
                 </div>
               </div>
               <div className="h-56 md:h-auto md:w-1/2">
-                <img src="/assets/Toxina Botulínica.png" alt="Toxina Botulínica" className="w-full h-full object-cover" />
+                <img src="/assets/Esta imagem no botox.jpeg" alt="Toxina Botulínica" className="w-full h-full object-cover" />
               </div>
             </div>
 
             {/* Hidratação Labial */}
             <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[450px]">
-              <img src="/assets/Hidratação Labial.png" alt="Hidratação Labial" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+              <img src="/assets/Esta imagem na hidratação labial.jpeg" alt="Hidratação Labial" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Hidratação Labial</h3>
@@ -669,19 +613,19 @@ const LandingPage = () => {
             <div className="w-full md:w-1/3 flex flex-col items-center relative bg-[#fcfaf8]">
               <h3 className="text-2xl font-medium tracking-tight text-[#824A2F] mb-4">Tratamento & Cuidado</h3>
               <p className="text-base text-[#3b2c24] leading-relaxed max-w-[260px]">
-                Realização do procedimento com máximo conforto, segurança e foco em resultados naturais.
+                Realização do procedimento com máximo conforto, segurança e foco em resultados naturais. O tratamento é iniciado de forma progressiva e ajustado ao longo do tempo.
               </p>
             </div>
           </div>
 
           <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3.5 text-lg text-white bg-[#82533a] rounded-full hover:bg-[#6e4631] transition-colors">
-            Dar o primeiro passo
+            Falar com a equipa
           </a>
         </section>
 
 
         {/* Section: Clinical Gallery */}
-        <AboutSpaceSection />
+
 
 
         {/* Section: FAQ */}
@@ -754,7 +698,7 @@ const LandingPage = () => {
             <h4 className="text-xl font-medium text-[#3b2c24] mb-6">Contactos</h4>
             <p className="text-lg text-[#3b2c24] mb-4">
               Rua do Ouro, 736<br />
-              Porto, Portugal 4150-549
+              Foz do Porto, Portugal
             </p>
             <p className="text-lg text-[#3b2c24] mb-4">+351 916 660 005</p>
             <p className="text-lg text-[#3b2c24]">geral@galerieclinic.com</p>
