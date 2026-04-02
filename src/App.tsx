@@ -737,7 +737,7 @@ const LandingPage = () => {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/home">
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/page2" element={<LandingPage />} />
