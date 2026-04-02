@@ -6,18 +6,18 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 const WA_LINK = 'https://wa.me/351916660005?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Galerie%20Clinic.';
 
 const VIDEO_SOURCES = [
-  '/videos/v5.mp4',
-  '/videos/v6.mp4',
-  '/videos/v7.mp4',
-  '/videos/v10.mp4',
-  '/videos/v11.mp4',
-  '/videos/v12.mp4',
-  '/videos/v1.mp4',
-  '/videos/v2.mp4',
-  '/videos/v3.mp4',
-  '/videos/v4.mp4',
-  '/videos/v8.mp4',
-  '/videos/v9.mp4',
+  './videos/v5.mp4',
+  './videos/v6.mp4',
+  './videos/v7.mp4',
+  './videos/v10.mp4',
+  './videos/v11.mp4',
+  './videos/v12.mp4',
+  './videos/v1.mp4',
+  './videos/v2.mp4',
+  './videos/v3.mp4',
+  './videos/v4.mp4',
+  './videos/v8.mp4',
+  './videos/v9.mp4',
 ];
 
 const FAQ_ITEMS = [
@@ -139,20 +139,20 @@ const LazyVideo = ({ src, isMuted, onMuteToggle }: { src: string, isMuted: boole
 
 const ResultadosSection = () => {
   const results = [
-    '/assets/results/photo-output.jpg',
-    '/assets/results/photo-output (2).jpg',
-    '/assets/results/IMG_0518.jpg',
-    '/assets/results/IMG_4970.jpg',
-    '/assets/results/IMG_8547.jpg',
-    '/assets/results/IMG_9732.jpg',
-    '/assets/results/IMG_0723.JPG',
-    '/assets/results/IMG_3398.JPG',
-    '/assets/results/IMG_6535.JPG',
-    '/assets/results/IMG_8090.JPG',
-    '/assets/results/IMG_9728.JPG',
-    '/assets/results/e36ad939-8bd5-4792-ab4e-35a14322332f.JPG',
-    '/assets/results/6916aa89-a0e9-4a92-8341-c0dfc19e35b0.JPG',
-    '/assets/results/88adef43-856f-49df-8f67-d5009d014f6e.JPG'
+    './assets/results/photo-output.jpg',
+    './assets/results/photo-output (2).jpg',
+    './assets/results/IMG_0518.jpg',
+    './assets/results/IMG_4970.jpg',
+    './assets/results/IMG_8547.jpg',
+    './assets/results/IMG_9732.jpg',
+    './assets/results/IMG_0723.JPG',
+    './assets/results/IMG_3398.JPG',
+    './assets/results/IMG_6535.JPG',
+    './assets/results/IMG_8090.JPG',
+    './assets/results/IMG_9728.JPG',
+    './assets/results/e36ad939-8bd5-4792-ab4e-35a14322332f.JPG',
+    './assets/results/6916aa89-a0e9-4a92-8341-c0dfc19e35b0.JPG',
+    './assets/results/88adef43-856f-49df-8f67-d5009d014f6e.JPG'
   ];
 
   const allResults = [...results, ...results];
@@ -204,18 +204,9 @@ const ContactForm = () => {
     setError(null);
 
     const formData = new FormData(e.currentTarget);
-    // WEB3FORMS Configuration
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE"); // User needs to replace this
-    formData.append("subject", "Novo Contacto Recebido – Galerie Clinic");
-    formData.append("from_name", "Landing Page Leads");
-
-    // Multiple recipients requirement: We'll add them to the subject or message 
-    // note: Web3Forms free usually sends to one registered email. 
-    // Pro allows multiple. I'll add a note for the user.
-    formData.append("note", "Enviar também para: geral@galerieclinic.com e alpha.clientesleads@gmail.com");
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("./send_email.php", {
         method: "POST",
         body: formData
       });
@@ -226,7 +217,7 @@ const ContactForm = () => {
         setIsSuccess(true);
         (e.target as HTMLFormElement).reset();
       } else {
-        setError("Ocorreu um problema ao enviar a sua mensagem. Por favor, tente novamente.");
+        setError(data.message || "Ocorreu um problema ao enviar a sua mensagem. Por favor, tente novamente.");
       }
     } catch (err) {
       setError("Não foi possível estabelecer ligação. Por favor, verifique a sua internet ou contacte-nos via WhatsApp.");
@@ -411,7 +402,7 @@ const LandingPage = () => {
           <div className="absolute inset-0 z-0">
             <video
               className="w-full h-full object-cover"
-              src="/videos/v9.mp4"
+              src="./videos/v9.mp4"
               autoPlay
               muted
               loop
@@ -451,7 +442,7 @@ const LandingPage = () => {
           {/* Left Side: Image */}
           <div className="w-full md:w-1/2 relative min-h-[500px] lg:min-h-[700px]">
             <img
-              src="/assets/skingirls.jpg"
+              src="./assets/skingirls.jpg"
               alt="Galerie Clinic - A nossa equipa"
               className="absolute inset-0 w-full h-full object-cover object-[center_25%]"
             />
@@ -509,13 +500,13 @@ const LandingPage = () => {
                 </div>
               </div>
               <div className="h-56 md:h-auto md:w-1/2">
-                <img src="/assets/Esta imagem no botox.jpeg" alt="Toxina Botulínica" className="w-full h-full object-cover" />
+                <img src="./assets/Esta imagem no botox.jpeg" alt="Toxina Botulínica" className="w-full h-full object-cover" />
               </div>
             </div>
 
             {/* Hidratação Labial */}
             <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[450px]">
-              <img src="/assets/Esta imagem na hidratação labial.jpeg" alt="Hidratação Labial" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+              <img src="./assets/Esta imagem na hidratação labial.jpeg" alt="Hidratação Labial" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Hidratação Labial</h3>
@@ -527,7 +518,7 @@ const LandingPage = () => {
 
             {/* Bioestimuladores */}
             <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[450px]">
-              <img src="/assets/Bioestimuladores de Colagenio.jpg" alt="Bioestimuladores" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+              <img src="./assets/Bioestimuladores de Colagenio.jpg" alt="Bioestimuladores" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Bioestimuladores<br />de Colagénio</h3>
@@ -539,7 +530,7 @@ const LandingPage = () => {
 
             {/* Laser */}
             <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[450px]">
-              <img src="/assets/Laser para Qualidade de Pele.jpg" alt="Laser" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+              <img src="./assets/Laser para Qualidade de Pele.jpg" alt="Laser" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">Laser para<br />Qualidade de Pele</h3>
@@ -551,7 +542,7 @@ const LandingPage = () => {
 
             {/* PRP */}
             <div className="relative bg-slate-900 rounded-[3rem] overflow-hidden min-h-[450px]">
-              <img src="/assets/specialty_prp.jpeg" alt="PRP Capilar" className="absolute inset-0 w-full h-full object-cover opacity-90" />
+              <img src="./assets/specialty_prp.jpeg" alt="PRP Capilar" className="absolute inset-0 w-full h-full object-cover opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#6e4631]/90 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 p-8">
                 <h3 className="text-2xl font-medium tracking-tight text-white mb-2">PRP<br />Capilar</h3>
@@ -575,7 +566,7 @@ const LandingPage = () => {
                 </div>
               </div>
               <div className="h-64 md:h-auto md:w-1/2">
-                <img src="/assets/Vitaminas e Nutrição Dérmica.jpg" alt="Nutrição Dérmica" className="w-full h-full object-cover" />
+                <img src="./assets/Vitaminas e Nutrição Dérmica.jpg" alt="Nutrição Dérmica" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -686,10 +677,10 @@ const LandingPage = () => {
             </p>
             <div className="flex gap-3">
               <a href="https://www.instagram.com/galerieclinic/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#82533a] text-white flex items-center justify-center hover:bg-[#6e4631] transition-colors">
-                <Instagram className="w-5 h-5" strokeWidth={1.5} />
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               </a>
               <a href="https://www.facebook.com/p/Galerie-Clinic-100093459514050/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#82533a] text-white flex items-center justify-center hover:bg-[#6e4631] transition-colors">
-                <Facebook className="w-5 h-5" strokeWidth={1.5} />
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
               </a>
             </div>
           </div>
