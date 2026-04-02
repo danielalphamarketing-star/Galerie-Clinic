@@ -214,7 +214,7 @@ const ContactForm = () => {
       const data = await response.json();
 
       if (data.success) {
-        setIsSuccess(true);
+        window.location.href = "/obrigado";
         (e.target as HTMLFormElement).reset();
       } else {
         setError(data.message || "Ocorreu um problema ao enviar a sua mensagem. Por favor, tente novamente.");
@@ -365,7 +365,7 @@ const LandingPage = () => {
           <a href="#tratamentos" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Tratamentos</a>
           <a href="#como-funcionamos" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Como Funcionamos</a>
           <a href="#resultados" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Resultados</a>
-          <a href="#contacte-nos" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Contacte-nos</a>
+          <a href="#contacto" className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Contacte-nos</a>
         </nav>
 
         <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="hidden md:inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#824A2F] text-white text-base font-medium hover:bg-[#6b3d27] transition-colors">
@@ -387,7 +387,7 @@ const LandingPage = () => {
             <a href="#tratamentos" onClick={() => setIsMenuOpen(false)} className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Tratamentos</a>
             <a href="#como-funcionamos" onClick={() => setIsMenuOpen(false)} className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Como Funcionamos</a>
             <a href="#resultados" onClick={() => setIsMenuOpen(false)} className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Resultados</a>
-            <a href="#contacte-nos" onClick={() => setIsMenuOpen(false)} className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Contacte-nos</a>
+            <a href="#contacto" onClick={() => setIsMenuOpen(false)} className="text-lg text-[#3b2c24] hover:text-[#eb6625] transition-colors">Contacte-nos</a>
             <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#824A2F] text-white text-base font-medium hover:bg-[#6b3d27] transition-colors w-full">
               Agendar Avaliação
             </a>
@@ -737,7 +737,7 @@ const LandingPage = () => {
 
 export default function App() {
   return (
-    <BrowserRouter basename="/home">
+    <BrowserRouter basename="/">
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/page2" element={<LandingPage />} />

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obrigado | Galerie Clinic – Medicina Estética no Porto</title>
+    <meta name="description" content="Obrigado pelo seu contacto. A equipa da Galerie Clinic irá responder-lhe com a maior brevidade possível." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --color-bg: #fcf9f5;
+            --color-bg-alt: #fcfaf8;
+            --color-text: #3b2c24;
+            --color-accent: #824A2F;
+            --color-accent-hover: #6b3d27;
+            --color-accent-light: #82533a;
+            --color-accent-warm: #f3e4d5;
+            --color-accent-cta: #eb9c7d;
+            --color-whatsapp: #25D366;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a { text-decoration: none; color: inherit; transition: color 0.3s ease; }
+
+        /* ── Header ── */
+        .header {
+            width: 100%;
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-logo {
+            font-size: 1.25rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        .header-nav { display: flex; align-items: center; gap: 2rem; }
+        .header-nav a { font-size: 1.125rem; color: var(--color-text); }
+        .header-nav a:hover { color: #eb6625; }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            background: var(--color-accent);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        .header-cta:hover { background: var(--color-accent-hover); color: #fff; }
+        .mobile-toggle { display: none; background: none; border: none; cursor: pointer; color: var(--color-text); }
+
+        /* ── Mobile Menu ── */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 0 1.5rem 1.5rem;
+            background: var(--color-bg-alt);
+        }
+        .mobile-menu.active { display: flex; }
+        .mobile-menu a { font-size: 1.125rem; color: var(--color-text); }
+        .mobile-menu a:hover { color: #eb6625; }
+        .mobile-menu .header-cta { width: 100%; text-align: center; }
+
+        /* ── Thank You Section ── */
+        .thank-you-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+        .thank-you-container { max-width: 42rem; }
+        .thank-you-icon {
+            width: 6rem;
+            height: 6rem;
+            background: var(--color-accent-warm);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2.5rem;
+            animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        .thank-you-icon svg { width: 3.5rem; height: 3.5rem; color: var(--color-accent); }
+        .thank-you-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 500;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out 0.2s forwards;
+        }
+        .thank-you-subtitle {
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--color-accent);
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out 0.35s forwards;
+        }
+        .thank-you-text {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: rgba(59, 44, 36, 0.8);
+            max-width: 36rem;
+            margin: 0 auto 2.5rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out 0.5s forwards;
+        }
+        .thank-you-divider {
+            width: 4rem;
+            height: 2px;
+            background: var(--color-accent);
+            margin: 0 auto 2.5rem;
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out 0.6s forwards;
+        }
+        .thank-you-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out 0.7s forwards;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1.125rem 2.5rem;
+            background: var(--color-accent);
+            color: #fff;
+            border-radius: 9999px;
+            font-size: 1.125rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(130, 74, 47, 0.25);
+        }
+        .btn-primary:hover { background: var(--color-accent-hover); color: #fff; transform: scale(1.03); }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1.125rem 2.5rem;
+            background: #fff;
+            color: var(--color-text);
+            border-radius: 9999px;
+            font-size: 1.125rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.9); transform: scale(1.03); }
+        .btn-row { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+
+        /* ── Footer ── */
+        .footer { background: var(--color-bg-alt); padding-top: 5rem; padding-bottom: 2.5rem; }
+        .footer-grid {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            text-transform: uppercase;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+        }
+        .footer-desc { font-size: 1.125rem; color: var(--color-text); margin-bottom: 2rem; max-width: 24rem; }
+        .footer-heading { font-size: 1.25rem; font-weight: 500; color: var(--color-text); margin-bottom: 1.5rem; }
+        .footer-link { font-size: 1.125rem; color: var(--color-text); display: block; margin-bottom: 0.75rem; }
+        .footer-link:hover { color: var(--color-accent); }
+        .footer-contact p { font-size: 1.125rem; color: var(--color-text); margin-bottom: 1rem; }
+        .social-icons { display: flex; gap: 0.75rem; }
+        .social-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: var(--color-accent-light);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+        .social-icon:hover { background: #6e4631; color: #fff; }
+        .footer-bottom {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 0;
+            border-top: 1px solid rgba(59,44,36,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+        }
+        .footer-bottom p { font-size: 1rem; color: var(--color-text); }
+        .footer-bottom a:hover { color: #eb6625; }
+
+        /* ── WhatsApp Float ── */
+        .wa-float {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 50;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            background: var(--color-whatsapp);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+        .wa-float:hover { transform: scale(1.1); }
+        .wa-float svg { width: 2rem; height: 2rem; fill: #fff; }
+        .wa-ping {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: var(--color-whatsapp);
+            animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+            opacity: 0.4;
+        }
+
+        /* ── Animations ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes ping {
+            75%, 100% { transform: scale(2); opacity: 0; }
+        }
+
+        /* ── Responsive ── */
+        @media (min-width: 768px) {
+            .header { padding: 1.5rem; }
+            .mobile-toggle { display: none !important; }
+            .header-nav { display: flex !important; }
+            .footer-grid { grid-template-columns: repeat(3, 1fr); }
+            .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
+        }
+        @media (max-width: 767px) {
+            .header-nav { display: none; }
+            .header-cta-desktop { display: none; }
+            .mobile-toggle { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════════ HEADER ═══════════════════ -->
+    <header class="header">
+        <a href="/" class="header-logo">GALERIE CLINIC</a>
+
+        <nav class="header-nav">
+            <a href="/#tratamentos">Tratamentos</a>
+            <a href="/#como-funcionamos">Como Funcionamos</a>
+            <a href="/#resultados">Resultados</a>
+            <a href="/#contacte-nos">Contacte-nos</a>
+        </nav>
+
+        <a href="https://wa.me/351916660005?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Galerie%20Clinic." target="_blank" rel="noopener noreferrer" class="header-cta header-cta-desktop">
+            Agendar Avaliação
+        </a>
+
+        <button class="mobile-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')" aria-label="Menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu">
+        <a href="/#tratamentos">Tratamentos</a>
+        <a href="/#como-funcionamos">Como Funcionamos</a>
+        <a href="/#resultados">Resultados</a>
+        <a href="/#contacte-nos">Contacte-nos</a>
+        <a href="https://wa.me/351916660005?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Galerie%20Clinic." target="_blank" rel="noopener noreferrer" class="header-cta">
+            Agendar Avaliação
+        </a>
+    </div>
+
+    <!-- ═══════════════════ THANK YOU CONTENT ═══════════════════ -->
+    <section class="thank-you-section">
+        <div class="thank-you-container">
+            <!-- Icon -->
+            <div class="thank-you-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+            </div>
+
+            <!-- Title -->
+            <p class="thank-you-subtitle">Mensagem Recebida com Sucesso</p>
+            <h1 class="thank-you-title">Obrigado pelo<br>seu contacto</h1>
+
+            <!-- Description -->
+            <p class="thank-you-text">
+                Agradecemos o seu interesse na Galerie Clinic. A nossa equipa irá analisar o seu pedido e entraremos em contacto consigo com a maior brevidade possível.
+            </p>
+
+            <div class="thank-you-divider"></div>
+
+            <!-- Actions -->
+            <div class="thank-you-actions">
+                <div class="btn-row">
+                    <a href="https://wa.me/351916660005?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Galerie%20Clinic." target="_blank" rel="noopener noreferrer" class="btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.837L.057 23.527a.5.5 0 0 0 .638.635l5.74-1.503A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.946a9.946 9.946 0 0 1-5.092-1.399l-.364-.217-3.773.988.999-3.671-.237-.376A9.946 9.946 0 0 1 2.054 12C2.054 6.497 6.497 2.054 12 2.054S21.946 6.497 21.946 12 17.503 21.946 12 21.946z"/></svg>
+                        Falar via WhatsApp
+                    </a>
+                    <a href="/" class="btn-secondary">
+                        Voltar ao Início
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ FOOTER ═══════════════════ -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <!-- Column 1: Brand -->
+            <div>
+                <h3 class="footer-title">Galerie Clinic</h3>
+                <p class="footer-desc">
+                    Medicina estética de confiança no Porto, focada em resultados naturais e na sua individualidade.
+                </p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/galerieclinic/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/p/Galerie-Clinic-100093459514050/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Column 2: Contacts -->
+            <div class="footer-contact">
+                <h4 class="footer-heading">Contactos</h4>
+                <p>Rua do Ouro, 736<br>Foz do Porto, Portugal</p>
+                <p>+351 916 660 005</p>
+                <p>geral@galerieclinic.com</p>
+            </div>
+
+            <!-- Column 3: Links -->
+            <div>
+                <h4 class="footer-heading">Links Úteis</h4>
+                <a href="/#tratamentos" class="footer-link">Tratamentos</a>
+                <a href="/#como-funcionamos" class="footer-link">Como Funcionamos</a>
+                <a href="/#resultados" class="footer-link">Resultados</a>
+                <a href="/#contacto" class="footer-link">Contacte-nos</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Galerie Clinic. Todos os direitos reservados.</p>
+            <p>Site Desenvolvido por <a href="https://marketingalphadigital.com.br/" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">Alpha Marketing Digital</a></p>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════ WHATSAPP FLOAT ═══════════════════ -->
+    <a href="https://wa.me/351916660005?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Galerie%20Clinic." target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Contactar via WhatsApp">
+        <span class="wa-ping"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.837L.057 23.527a.5.5 0 0 0 .638.635l5.74-1.503A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.946a9.946 9.946 0 0 1-5.092-1.399l-.364-.217-3.773.988.999-3.671-.237-.376A9.946 9.946 0 0 1 2.054 12C2.054 6.497 6.497 2.054 12 2.054S21.946 6.497 21.946 12 17.503 21.946 12 21.946z"/>
+        </svg>
+    </a>
+
+</body>
+</html>
